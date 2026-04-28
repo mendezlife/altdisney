@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Guía caminable de Coupvray</title>
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body {
+    background: #f2eadf;
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #171717;
+  }
+  .app {
+    max-width: 980px;
+    margin: auto;
+    background: #f8f3ea;
+    min-height: 100vh;
+  }
+  .card {
+    border-radius: 30px;
+    background: #fffaf2;
+    box-shadow: 0 14px 34px rgba(0,0,0,.08);
+    border: 1px solid rgba(0,0,0,.06);
+    overflow: hidden;
+  }
+  .mini-card {
+    border-radius: 22px;
+    background: rgba(255,255,255,.72);
+    border: 1px solid rgba(0,0,0,.06);
+  }
+  .chip {
+    border-radius: 999px;
+    padding: 6px 10px;
+    font-size: 11px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+    white-space: nowrap;
+  }
+  .slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+  }
+  .slider::-webkit-scrollbar { display: none; }
+  .slide {
+    min-width: 100%;
+    height: 240px;
+    object-fit: cover;
+    scroll-snap-align: start;
+    cursor: pointer;
+  }
+  @media (min-width: 768px) {
+    .slide { height: 340px; }
+  }
+  .modal { display: none; }
+  .modal.active { display: flex; }
+</style>
+</head>
+
+<body>
+<main class="app pb-24">
+
+<section class="relative h-[460px] md:h-[560px] overflow-hidden rounded-b-[44px]">
+  <img
+    src="https://images.trvl-media.com/place/6141555/984c2e0d-989b-46ad-9c0d-523cd5a13d7e.jpg?width=1600"
+    class="absolute inset-0 w-full h-full object-cover"
+    alt="Entrada del parque de Coupvray"
+  />
+  <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/35 to-black/10"></div>
+
+  <div class="absolute top-5 left-5 right-5 flex justify-between gap-3">
+    <div class="bg-white/90 rounded-3xl px-4 py-3 shadow">
+      <p class="text-[11px] uppercase font-black tracking-widest text-stone-500">Base</p>
+      <p class="font-black">B&B HOTEL · Coupvray</p>
+    </div>
+    <div class="bg-black/70 text-white rounded-3xl px-4 py-3 text-right">
+      <p class="text-[11px] uppercase font-black tracking-widest text-white/70">Para</p>
+      <p class="font-black">Familia con niña de 8 años</p>
+    </div>
+  </div>
+
+  <div class="absolute bottom-8 left-5 right-5 text-white">
+    <span class="chip bg-lime-300 text-black inline-block mb-4">Descompresión después de Disney</span>
+    <h1 class="text-5xl md:text-7xl font-black leading-[.9] tracking-tight">
+      Paseos tranquilos cerca del hotel
+    </h1>
+    <p class="mt-4 text-white/85 text-lg md:text-2xl max-w-2xl">
+      Una guía para entender de un vistazo qué es cada sitio, por qué merece la pena y cuándo elegirlo.
+    </p>
+  </div>
+</section>
+
+<section class="sticky top-0 z-30 bg-[#f8f3ea]/90 backdrop-blur px-4 md:px-6 py-3 border-b border-black/5">
+  <div class="slider gap-2">
+    <a href="#park" class="chip bg-lime-300 text-black">Mejor reset</a>
+    <a href="#braille" class="chip bg-sky-300 text-black">Cultura</a>
+    <a href="#village" class="chip bg-orange-300 text-black">Pueblo</a>
+    <a href="#sunset" class="chip bg-pink-300 text-black">Atardecer</a>
+  </div>
+</section>
+
+<section class="p-4 md:p-6 grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+  <div class="card p-4 md:p-6 bg-black text-white">
+    <p class="text-4xl font-black">4</p>
+    <p class="text-sm font-bold mt-1">opciones cercanas</p>
+  </div>
+  <div class="card p-4 md:p-6">
+    <p class="text-4xl font-black">10–40</p>
+    <p class="text-sm font-bold mt-1">minutos andando</p>
+  </div>
+  <div class="card p-4 md:p-6 col-span-2 bg-yellow-100">
+    <p class="font-black text-sm uppercase tracking-widest">Objetivo de esta guía</p>
+    <p class="mt-2 text-sm md:text-base text-stone-700">
+      Estos planes no compiten con Disney. Funcionan como herramientas emocionales:
+      bajan la sobreestimulación, devuelven libertad de movimiento y ayudan a que la familia aterrice suavemente después de un día intenso de parque.
+    </p>
+  </div>
+</section>
+
+<section class="px-4 md:px-6 pb-6">
+  <div class="card p-5 md:p-6 bg-[#171717] text-white">
+    <p class="chip bg-lime-300 text-black inline-block">Decisión rápida</p>
+    <div class="grid md:grid-cols-4 gap-3 mt-4 text-sm">
+      <div class="mini-card bg-white/10 p-4"><b>¿Necesitáis espacio?</b><br />Parque del Château</div>
+      <div class="mini-card bg-white/10 p-4"><b>¿Necesitáis algo con significado?</b><br />Casa de Louis Braille</div>
+      <div class="mini-card bg-white/10 p-4"><b>¿Cero ganas de decidir?</b><br />Paseo por el pueblo</div>
+      <div class="mini-card bg-white/10 p-4"><b>¿Casi hora de dormir?</b><br />Paseo corto al atardecer</div>
+    </div>
+  </div>
+</section>
+
+<section id="content" class="p-4 md:p-6 space-y-8"></section>
+
+</main>
+
+<div id="modal" class="modal fixed inset-0 bg-black/90 items-center justify-center z-50 p-4" onclick="closeModal()">
+  <button onclick="event.stopPropagation(); closeModal()" class="absolute top-5 right-5 text-white text-5xl z-20 leading-none">&times;</button>
+  <button onclick="event.stopPropagation(); navigateModal(-1)" class="absolute left-3 md:left-8 top-1/2 -translate-y-1/2 z-20 bg-white/90 rounded-full w-12 h-12 md:w-14 md:h-14 text-4xl font-black">‹</button>
+  <img id="modalImg" class="max-w-full max-h-[88vh] rounded-3xl object-contain" onclick="event.stopPropagation()" alt="Imagen ampliada de la galería" />
+  <button onclick="event.stopPropagation(); navigateModal(1)" class="absolute right-3 md:right-8 top-1/2 -translate-y-1/2 z-20 bg-white/90 rounded-full w-12 h-12 md:w-14 md:h-14 text-4xl font-black">›</button>
+  <div id="modalCounter" class="absolute bottom-5 left-1/2 -translate-x-1/2 bg-white/90 text-black px-4 py-2 rounded-full text-sm font-bold" onclick="event.stopPropagation()"></div>
+</div>
+
+<script>
+let currentGallery = [];
+let currentIndex = 0;
+
+function slideGallery(button, direction) {
+  const slider = button.parentElement.querySelector(".slider");
+  slider.scrollBy({ left: slider.clientWidth * direction, behavior: "smooth" });
+}
+
+function openModal(img) {
+  const slider = img.closest(".slider");
+  currentGallery = Array.from(slider.querySelectorAll("img")).map(i => i.src);
+  currentIndex = currentGallery.indexOf(img.src);
+  updateModal();
+  document.getElementById("modal").classList.add("active");
+  document.body.style.overflow = "hidden";
+}
+
+function updateModal() {
+  document.getElementById("modalImg").src = currentGallery[currentIndex];
+  document.getElementById("modalCounter").textContent = (currentIndex + 1) + " / " + currentGallery.length;
+}
+
+function navigateModal(direction) {
+  currentIndex += direction;
+  if (currentIndex < 0) currentIndex = currentGallery.length - 1;
+  if (currentIndex >= currentGallery.length) currentIndex = 0;
+  updateModal();
+}
+
+function closeModal() {
+  document.getElementById("modal").classList.remove("active");
+  document.body.style.overflow = "";
+}
+
+document.addEventListener("keydown", function(e) {
+  if (e.key === "Escape") closeModal();
+  if (document.getElementById("modal").classList.contains("active")) {
+    if (e.key === "ArrowLeft") navigateModal(-1);
+    if (e.key === "ArrowRight") navigateModal(1);
+  }
+});
+
+function place(data) {
+  return `
+  <article id="${data.id}" class="card scroll-mt-24">
+
+    <div class="relative">
+      <button onclick="slideGallery(this,-1)"
+        class="absolute left-3 top-1/2 -translate-y-1/2 z-10 bg-white/90 rounded-full w-11 h-11 text-3xl font-black shadow">‹</button>
+
+      <div class="slider">
+        ${data.images.map(src => `<img onclick="openModal(this)" class="slide" src="${src}" alt="${data.title}">`).join("")}
+      </div>
+
+      <button onclick="slideGallery(this,1)"
+        class="absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-white/90 rounded-full w-11 h-11 text-3xl font-black shadow">›</button>
+
+      <div class="absolute top-4 left-4 chip ${data.color} text-black">${data.number} · ${data.label}</div>
+      <div class="absolute bottom-3 right-3 chip bg-black/70 text-white">Desliza / usa flechas · ${data.images.length}</div>
+    </div>
+
+    <div class="p-4 md:p-6">
+      <h2 class="text-3xl md:text-5xl font-black leading-none">${data.title}</h2>
+      <p class="mt-2 text-stone-500 font-bold">${data.subtitle}</p>
+
+      <div class="grid grid-cols-3 gap-2 md:gap-3 mt-4">
+        <div class="rounded-2xl ${data.softColor} p-3 md:p-4">
+          <p class="text-[11px] font-black uppercase">Andando</p>
+          <p class="font-black md:text-xl">${data.walk}</p>
+        </div>
+        <div class="rounded-2xl bg-stone-100 p-3 md:p-4">
+          <p class="text-[11px] font-black uppercase">Mejor momento</p>
+          <p class="font-black md:text-xl">${data.best}</p>
+        </div>
+        <div class="rounded-2xl bg-stone-100 p-3 md:p-4">
+          <p class="text-[11px] font-black uppercase">Úsalo si</p>
+          <p class="font-black md:text-xl">${data.whenShort}</p>
+        </div>
+      </div>
+
+      <div class="mt-5 space-y-3 text-stone-700 leading-relaxed">
+        <p>${data.insight1}</p>
+        <p class="text-sm md:text-base text-stone-600">${data.insight2}</p>
+        <p class="text-sm md:text-base text-stone-600">${data.insight3}</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-3 mt-5">
+        <div class="mini-card p-4 ${data.softColor}">
+          <p class="font-black uppercase text-xs tracking-widest">Valor que aporta</p>
+          <p class="mt-2 text-sm text-stone-700">${data.value}</p>
+        </div>
+        <div class="mini-card p-4 bg-white">
+          <p class="font-black uppercase text-xs tracking-widest">Consejo práctico</p>
+          <p class="mt-2 text-sm text-stone-700">${data.tip}</p>
+        </div>
+        <div class="mini-card p-4 bg-white">
+          <p class="font-black uppercase text-xs tracking-widest">Evítalo si</p>
+          <p class="mt-2 text-sm text-stone-700">${data.avoid}</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3 mt-5 text-sm">
+        <div class="bg-green-100 p-4 rounded-3xl">
+          <b class="uppercase tracking-widest text-xs">Pros</b>
+          <ul class="mt-2 space-y-1">${data.pros.map(p => `<li>• ${p}</li>`).join("")}</ul>
+        </div>
+        <div class="bg-red-100 p-4 rounded-3xl">
+          <b class="uppercase tracking-widest text-xs">Contras</b>
+          <ul class="mt-2 space-y-1">${data.cons.map(c => `<li>• ${c}</li>`).join("")}</ul>
+        </div>
+      </div>
+
+      <div class="mt-5 p-4 rounded-3xl bg-black text-white">
+        <p class="font-black uppercase text-xs tracking-widest text-white/60">Decisión de un vistazo</p>
+        <p class="mt-2 text-lg font-black">${data.decision}</p>
+      </div>
+
+      <iframe class="mt-5 w-full h-60 md:h-72 rounded-3xl border-0" loading="lazy" src="${data.map}"></iframe>
+    </div>
+  </article>`;
+}
+
+const places = [
+  {
+    id: "park",
+    number: "01",
+    label: "Mejor reset",
+    color: "bg-lime-300",
+    softColor: "bg-lime-100",
+    title: "Parque del Château de Coupvray",
+    subtitle: "Ruinas reales de un château, zonas verdes, espacio abierto y la mejor opción para descomprimir.",
+    walk: "15–20 min",
+    best: "Atardecer",
+    whenShort: "Sigue activa",
+    images: [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Ch%C3%A2teau_de_Coupvray_(Seine-et-Marne).jpg?width=1200",
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Coupvray_(77),_fa%C3%A7ade_du_ch%C3%A2teau_ruin%C3%A9_1.jpg?width=1200",
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Coupvray_(77),_communs_du_ch%C3%A2teau_5.jpg?width=1200",
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Vieux_ch%C3%A2teau_Coupvray.jpg?width=1200",
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Entr%C3%A9e_du_parc_du_ch%C3%A2teau_Coupvray.jpg?width=1200"
+    ],
+    insight1: "Las ruinas del Château de Coupvray son uno de los lugares con más atmósfera cerca del hotel: un antiguo entorno de château suavizado hoy por vegetación, caminos y espacios abiertos.",
+    insight2: "Ofrece una magia muy distinta a la de Disney: más silenciosa, más antigua y más misteriosa. Para una niña, el valor es inmediato: puede moverse libremente, inventar historias alrededor de las ruinas y descomprimir sin colas, música, horarios ni multitudes.",
+    insight3: "Por qué importa: es el mejor contrapeso emocional a Disneyland. Después de tanta estructura, espectáculo y estímulo, aquí hay libertad, silencio y una pequeña aventura real.",
+    value: "Convierte la energía sobrante en exploración tranquila. Da espacio al cuerpo y ofrece a la imaginación un mundo narrativo no comercial.",
+    tip: "Deja que tu hija lidere los primeros 10 minutos. No expliques demasiado: que las ruinas se conviertan en su propia historia.",
+    avoid: "Lluvia fuerte, oscuridad o ese momento en el que está claro que todo el mundo necesita cama y no otro paseo.",
+    pros: ["Mejor reset emocional", "Libertad para correr y explorar", "Sensación ligera de aventura entre ruinas", "Gran contraste con Disney"],
+    cons: ["Depende del tiempo", "No es una atracción clásica", "Mejor con luz de día"],
+    decision: "Elígelo si está sobreestimulada pero todavía tiene energía física.",
+    map: "https://www.google.com/maps?f=d&saddr=B%26B+HOTEL+près+de+Disneyland+Paris,+Coupvray&daddr=Parc+du+Château+de+Coupvray&dirflg=w&output=embed"
+  },
+  {
+    id: "braille",
+    number: "02",
+    label: "Cultural",
+    color: "bg-sky-300",
+    softColor: "bg-sky-100",
+    title: "Casa natal de Louis Braille",
+    subtitle: "Una casa pequeña con una historia humana enorme.",
+    walk: "10–15 min",
+    best: "Mañana",
+    whenShort: "Curiosidad",
+    images: [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Maison_natale_de_Louis_Braille_1.jpg?width=1200",
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Braille_house.JPG?width=1200",
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Braille_house04.JPG?width=1200",
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Braille_house07.JPG?width=1200",
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Coupvray-05.jpg?width=1200"
+    ],
+    insight1: "Aquí nació Louis Braille, en Coupvray, el 4 de enero de 1809. La casa se convirtió en museo y conserva la sensación de una vivienda tradicional de la región de Brie.",
+    insight2: "Cuenta la historia de un niño que perdió la vista y que más tarde creó el sistema de puntos en relieve que abrió el acceso a la lectura, la escritura, la música y la educación a personas ciegas de todo el mundo.",
+    insight3: "Por qué importa: no es solo un museo pequeño. Es una historia real muy potente al lado del mundo ficticio de Disney. Convierte el paseo en algo con significado: invención, resiliencia, accesibilidad e impacto social.",
+    value: "Aporta profundidad intelectual y emocional al viaje: una persona real, una invención real y un legado global.",
+    tip: "Explícaselo en una frase: “Esta es la casa de la persona que inventó una forma de leer con los dedos”.",
+    avoid: "Si tiene hambre, está impaciente o viene muy saturada. Este lugar necesita un estado de ánimo tranquilo para funcionar.",
+    pros: ["Educativo y con significado", "Tranquilo y de escala íntima", "Historia única", "Aporta un sentido muy real al viaje"],
+    cons: ["No es lúdico", "Requiere atención", "Solo funciona si hay calma"],
+    decision: "Elígelo si queréis un momento cultural tranquilo, no entretenimiento.",
+    map: "https://www.google.com/maps?f=d&saddr=B%26B+HOTEL+près+de+Disneyland+Paris,+Coupvray&daddr=Maison+Natale+de+Louis+Braille,+Coupvray&dirflg=w&output=embed"
+  },
+  {
+    id: "village",
+    number: "03",
+    label: "Pueblo",
+    color: "bg-orange-300",
+    softColor: "bg-orange-100",
+    title: "Paseo por el pueblo de Coupvray",
+    subtitle: "Sin agenda, sin presión: simplemente el lugar real que os rodea.",
+    walk: "10–40 min",
+    best: "Tarde",
+    whenShort: "Sin decidir",
+    images: [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Coupvray-01.jpg?width=1200",
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Coupvray-02.jpg?width=1200",
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Coupvray-03.jpg?width=1200",
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Coupvray-04.jpg?width=1200",
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Coupvray-06.jpg?width=1200"
+    ],
+    insight1: "Coupvray no es solo una parada de hotel cerca de Disneyland. Es un pequeño pueblo de Seine-et-Marne con identidad local propia, muy vinculado a Louis Braille y al paisaje rural de Brie, al este de París.",
+    insight2: "Pasear por el pueblo permite sentir algo que muchos visitantes de Disney se pierden por completo: calles tranquilas, casas bajas, escala humana y el contraste entre la vida cotidiana francesa y el gran mundo temático de al lado.",
+    insight3: "Por qué importa: este paseo os orienta. Entendéis dónde estáis, no solo dónde está Disney. Además, es la opción más flexible: camináis cinco minutos, comprobáis el ánimo y seguís o volvéis.",
+    value: "Sustituye la sensación de “zona turística” por contexto local. Ayuda a la familia a sentirse en un pueblo real, no solo en un entorno de resort.",
+    tip: "Hazlo reversible: caminad cinco minutos y luego preguntad si apetece seguir o volver.",
+    avoid: "Tiempo frío y húmedo, muy poca energía o cuando el grupo necesita un destino claro para motivarse.",
+    pros: ["Flexible", "Cero esfuerzo", "Contexto local real", "Buen plan comodín"],
+    cons: ["Menos emocionante", "Requiere imaginación", "No tiene un destino claro"],
+    decision: "Elígelo cuando no queráis pensar ni comprometeros con nada.",
+    map: "https://www.google.com/maps?f=d&saddr=B%26B+HOTEL+près+de+Disneyland+Paris,+Coupvray&daddr=Coupvray,+France&dirflg=w&output=embed"
+  },
+  {
+    id: "sunset",
+    number: "04",
+    label: "Atardecer",
+    color: "bg-pink-300",
+    softColor: "bg-pink-100",
+    title: "Paseo corto al atardecer",
+    subtitle: "El reset emocional de menor esfuerzo.",
+    walk: "10–20 min",
+    best: "Después del parque",
+    whenShort: "Cansancio",
+    images: [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Ch%C3%A2teau_de_Coupvray_Automne.jpg?width=1200",
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Coupvray%20eglise.JPG?width=1200",
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Coupvray%20(77),%20%C3%A9glise%201.jpg?width=1200",
+      "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%89glise%20Saint%20Pierre%20-%20Coupvray%20(FR77)%20-%202025-08-03%20-%204.jpg?width=1200",
+      "https://images.trvl-media.com/place/6141555/0ddd09ce-1a6c-43b3-a2ff-7eaf83fa0bd8.jpg?width=1200"
+    ],
+    insight1: "Esto no va tanto de llegar a un sitio concreto como de crear un ritual de transición. Después de Disney, el cuerpo todavía puede estar lleno de luces, sonido, colas, personajes y decisiones.",
+    insight2: "Un paseo corto al atardecer desde el hotel ayuda a que el día aterrice: baja el ritmo, vuelve la conversación y vuestra hija tiene un último movimiento suave antes de dormir sin empezar otra “actividad”.",
+    insight3: "Por qué importa: protege el día siguiente. Un cierre calmado evita que el viaje se convierta en una cadena de días sobreestimulados. Mueve a la familia de la excitación al descanso.",
+    value: "Convierte el final del día en una secuencia de aterrizaje. Ayuda a dormir mejor y empezar el día siguiente con más suavidad.",
+    tip: "Mantenlo deliberadamente corto. El éxito no es caminar mucho, sino volver más tranquilos.",
+    avoid: "Si ya tiene sueño, frío o está emocionalmente agotada. En ese caso, el reset debe ser la habitación del hotel.",
+    pros: ["El reset más fácil", "Siempre disponible", "Buena transición emocional", "No requiere planificación"],
+    cons: ["No hay destino concreto", "Muy simple", "No es visualmente espectacular"],
+    decision: "Elígelo cuando estéis cansados pero todavía no listos para dormir.",
+    map: "https://www.google.com/maps?f=d&saddr=B%26B+HOTEL+près+de+Disneyland+Paris,+Coupvray&daddr=Coupvray,+France&dirflg=w&output=embed"
+  }
+];
+
+document.getElementById("content").innerHTML = places.map(place).join("");
+</script>
+
+<section class="px-4 md:px-6 pb-10">
+  <div class="card p-5 text-xs text-stone-600">
+    <p class="font-black uppercase tracking-widest mb-2">Créditos de imagen</p>
+    <p>
+      Las imágenes se cargan desde Wikimedia Commons mediante Special:FilePath y desde las URLs que has añadido manualmente.
+      Si publicas o compartes esta página, conserva la atribución cuando corresponda.
+      Algunos archivos de Commons usan licencias Creative Commons Attribution o Attribution-ShareAlike.
+    </p>
+  </div>
+</section>
+
+</body>
+</html>
