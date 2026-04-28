@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Disneyland Paris · Itinerario Familiar 3–6 Mayo 2026</title>
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body {
+    background: #f2eadf;
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #171717;
+  }
+  .app {
+    max-width: 980px;
+    margin: auto;
+    background: #f8f3ea;
+    min-height: 100vh;
+  }
+  .card {
+    border-radius: 30px;
+    background: #fffaf2;
+    box-shadow: 0 14px 34px rgba(0,0,0,.08);
+    border: 1px solid rgba(0,0,0,.06);
+    overflow: hidden;
+  }
+  .mini-card {
+    border-radius: 22px;
+    background: rgba(255,255,255,.76);
+    border: 1px solid rgba(0,0,0,.06);
+  }
+  .chip {
+    border-radius: 999px;
+    padding: 6px 10px;
+    font-size: 11px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+    white-space: nowrap;
+  }
+  .slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+  }
+  .slider::-webkit-scrollbar { display: none; }
+  .slide {
+    min-width: 100%;
+    height: 250px;
+    object-fit: cover;
+    scroll-snap-align: start;
+    cursor: pointer;
+  }
+  @media (min-width: 768px) {
+    .slide { height: 380px; }
+  }
+  .modal { display: none; }
+  .modal.active { display: flex; }
+  .attraction-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    cursor: pointer;
+  }
+</style>
+</head>
+
+<body>
+<main class="app pb-24">
+
+<section class="relative h-[520px] md:h-[620px] overflow-hidden rounded-b-[44px]">
+  <img
+    src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Disneyland_Paris_Castle.jpg/1280px-Disneyland_Paris_Castle.jpg"
+    class="absolute inset-0 w-full h-full object-cover"
+    alt="Castillo de Disneyland Paris"
+    onerror="safeImage(this,'Disneyland Paris')"
+  />
+  <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/35 to-black/10"></div>
+
+  <div class="absolute top-5 left-5 right-5 flex justify-between gap-3">
+    <div class="bg-white/90 rounded-3xl px-4 py-3 shadow">
+      <p class="text-[11px] uppercase font-black tracking-widest text-stone-500">Viaje</p>
+      <p class="font-black">Disneyland Paris</p>
+    </div>
+    <div class="bg-black/70 text-white rounded-3xl px-4 py-3 text-right">
+      <p class="text-[11px] uppercase font-black tracking-widest text-white/70">Fechas</p>
+      <p class="font-black">3–6 mayo 2026</p>
+    </div>
+  </div>
+
+  <div class="absolute bottom-8 left-5 right-5 text-white">
+    <span class="chip bg-yellow-300 text-black inline-block mb-4">Guía familiar emocional</span>
+    <h1 class="text-5xl md:text-7xl font-black leading-[.9] tracking-tight">
+      Disney sin agotarse
+    </h1>
+    <p class="mt-4 text-white/85 text-lg md:text-2xl max-w-2xl">
+      Un itinerario para vivir el parque como una historia: aterrizar, profundizar, repetir lo importante y cerrar con calma.
+    </p>
+  </div>
+</section>
+
+<section class="sticky top-0 z-30 bg-[#f8f3ea]/90 backdrop-blur px-4 md:px-6 py-3 border-b border-black/5">
+  <div class="slider gap-2">
+    <a href="#domingo" class="chip bg-yellow-300 text-black">Domingo · Aterrizaje</a>
+    <a href="#lunes" class="chip bg-indigo-300 text-black">Lunes · Star Wars</a>
+    <a href="#martes" class="chip bg-purple-300 text-black">Martes · Balance</a>
+    <a href="#miercoles" class="chip bg-green-300 text-black">Miércoles · Cierre</a>
+    <a href="#modo-vivo" class="chip bg-black text-white">Modo parque</a>
+  </div>
+</section>
+
+<section class="p-4 md:p-6 grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+  <div class="card p-4 md:p-6 bg-black text-white">
+    <p class="text-4xl font-black">4</p>
+    <p class="text-sm font-bold mt-1">días con intención</p>
+  </div>
+  <div class="card p-4 md:p-6">
+    <p class="text-4xl font-black">15+</p>
+    <p class="text-sm font-bold mt-1">momentos clave</p>
+  </div>
+  <div class="card p-4 md:p-6 col-span-2 bg-yellow-100">
+    <p class="font-black text-sm uppercase tracking-widest">Objetivo de esta guía</p>
+    <p class="mt-2 text-sm md:text-base text-stone-700">
+      No se trata de verlo todo. Se trata de construir memoria: una primera emoción fuerte, un día de inmersión total, una repetición significativa y una salida sin agotamiento.
+    </p>
+  </div>
+</section>
+
+<section class="px-4 md:px-6 pb-6">
+  <div class="card p-5 md:p-6 bg-[#171717] text-white">
+    <p class="chip bg-lime-300 text-black inline-block">Decisión rápida</p>
+    <div class="grid md:grid-cols-4 gap-3 mt-4 text-sm">
+      <div class="mini-card bg-white/10 p-4"><b>Domingo</b><br />Emoción antes que cantidad</div>
+      <div class="mini-card bg-white/10 p-4"><b>Lunes</b><br />Discoveryland como universo</div>
+      <div class="mini-card bg-white/10 p-4"><b>Martes</b><br />Repetir lo que conectó</div>
+      <div class="mini-card bg-white/10 p-4"><b>Miércoles</b><br />Salir queriendo volver</div>
+    </div>
+  </div>
+</section>
+
+<section id="modo-vivo" class="px-4 md:px-6 pb-6">
+  <div class="card p-5 md:p-6 bg-white">
+    <p class="chip bg-black text-white inline-block">Modo parque en vivo</p>
+    <h2 class="text-3xl md:text-4xl font-black mt-3">Si pasa esto → haz esto</h2>
+    <p class="mt-2 text-stone-600 font-bold">
+      Mini-decisiones para no romper el día cuando aparezcan cansancio, lluvia, colas o saturación.
+    </p>
+
+    <div class="grid md:grid-cols-2 gap-3 mt-5 text-sm">
+      <div class="mini-card p-4 bg-yellow-50"><p class="font-black">Si está emocionada pero dispersa</p><p class="mt-2 text-stone-700">No metas otra ride intensa. Haz una zona con atmósfera: Place de Rémy, Main Street, Fantasyland o Castle.</p></div>
+      <div class="mini-card p-4 bg-blue-50"><p class="font-black">Si llueve</p><p class="mt-2 text-stone-700">Prioriza shows y rides indoor: Mickey and the Magician, Animation Academy, Pirates, Small World, Star Tours o Buzz.</p></div>
+      <div class="mini-card p-4 bg-red-50"><p class="font-black">Si una cola pasa de 40–45 min</p><p class="mt-2 text-stone-700">No la conviertas en deuda emocional. Cambia a paseo, snack, tienda o atracción suave cercana.</p></div>
+      <div class="mini-card p-4 bg-green-50"><p class="font-black">Si pide repetir algo</p><p class="mt-2 text-stone-700">Di que sí si no rompe el día. Repetir es consolidar recuerdo, no perder tiempo.</p></div>
+    </div>
+
+    <div class="mt-5 p-4 rounded-3xl bg-black text-white">
+      <p class="font-black uppercase text-xs tracking-widest text-white/60">Regla madre</p>
+      <p class="mt-2 text-lg font-black">El éxito del viaje no es hacer más. Es proteger los momentos que ya funcionaron.</p>
+    </div>
+  </div>
+</section>
+
+<section id="content" class="p-4 md:p-6 space-y-8"></section>
+
+<section class="px-4 md:px-6 pb-10">
+  <div class="card p-5 md:p-6 bg-[#171717] text-white">
+    <p class="chip bg-lime-300 text-black inline-block">Mantra familiar</p>
+    <h2 class="text-3xl md:text-5xl font-black mt-3 leading-none">
+      Menos checklist.<br />Más recuerdo.
+    </h2>
+    <p class="mt-4 text-white/75 text-lg">
+      Si una atracción crea conexión, vale más que tres atracciones hechas por inercia.
+      Este viaje no se mide en cantidad, sino en escenas que vuestra hija querrá volver a contar.
+    </p>
+  </div>
+</section>
+
+<section class="px-4 md:px-6 pb-10">
+  <div class="card p-5 text-xs text-stone-600">
+    <p class="font-black uppercase tracking-widest mb-2">Créditos de imagen</p>
+    <p>
+      Las imágenes se cargan desde Wikimedia Commons u otras fuentes públicas mediante URLs externas.
+      Algunas pueden requerir atribución si esta página se publica fuera del uso privado familiar.
+      Si alguna imagen falla, la página muestra automáticamente un placeholder para no romper el diseño.
+    </p>
+  </div>
+</section>
+
+</main>
+
+<div id="modal" class="modal fixed inset-0 bg-black/90 items-center justify-center z-50 p-4" onclick="closeModal()">
+  <button onclick="event.stopPropagation(); closeModal()" class="absolute top-5 right-5 text-white text-5xl z-20 leading-none">&times;</button>
+  <button onclick="event.stopPropagation(); navigateModal(-1)" class="absolute left-3 md:left-8 top-1/2 -translate-y-1/2 z-20 bg-white/90 rounded-full w-12 h-12 md:w-14 md:h-14 text-4xl font-black">‹</button>
+  <img id="modalImg" class="max-w-full max-h-[88vh] rounded-3xl object-contain" onclick="event.stopPropagation()" alt="Imagen ampliada" />
+  <button onclick="event.stopPropagation(); navigateModal(1)" class="absolute right-3 md:right-8 top-1/2 -translate-y-1/2 z-20 bg-white/90 rounded-full w-12 h-12 md:w-14 md:h-14 text-4xl font-black">›</button>
+  <div id="modalCounter" class="absolute bottom-5 left-1/2 -translate-x-1/2 bg-white/90 text-black px-4 py-2 rounded-full text-sm font-bold" onclick="event.stopPropagation()"></div>
+</div>
+
+<script>
+let currentGallery = [];
+let currentIndex = 0;
+
+function safeImage(img, title) {
+  img.onerror = null;
+  img.src = "https://placehold.co/1200x700/171717/ffffff?text=" + encodeURIComponent(title);
+}
+
+function slideGallery(button, direction) {
+  const slider = button.parentElement.querySelector(".slider");
+  slider.scrollBy({ left: slider.clientWidth * direction, behavior: "smooth" });
+}
+
+function openModal(img) {
+  const parent = img.closest(".slider") || img.closest("article") || document;
+  currentGallery = Array.from(parent.querySelectorAll("img")).map(i => i.src);
+  currentIndex = currentGallery.indexOf(img.src);
+  if (currentIndex < 0) {
+    currentGallery = [img.src];
+    currentIndex = 0;
+  }
+  updateModal();
+  document.getElementById("modal").classList.add("active");
+  document.body.style.overflow = "hidden";
+}
+
+function updateModal() {
+  document.getElementById("modalImg").src = currentGallery[currentIndex];
+  document.getElementById("modalCounter").textContent = (currentIndex + 1) + " / " + currentGallery.length;
+}
+
+function navigateModal(direction) {
+  currentIndex += direction;
+  if (currentIndex < 0) currentIndex = currentGallery.length - 1;
+  if (currentIndex >= currentGallery.length) currentIndex = 0;
+  updateModal();
+}
+
+function closeModal() {
+  document.getElementById("modal").classList.remove("active");
+  document.body.style.overflow = "";
+}
+
+document.addEventListener("keydown", function(e) {
+  if (e.key === "Escape") closeModal();
+  if (document.getElementById("modal").classList.contains("active")) {
+    if (e.key === "ArrowLeft") navigateModal(-1);
+    if (e.key === "ArrowRight") navigateModal(1);
+  }
+});
+
+function attractionCard(a) {
+  return `
+  <div class="mini-card overflow-hidden">
+    <div class="relative">
+      <img onclick="openModal(this)" class="attraction-img" src="${a.img}" alt="${a.name}" onerror="safeImage(this, '${a.name.replace(/'/g,"")}')">
+      <div class="absolute top-3 left-3 chip ${a.color} text-black">${a.time}</div>
+      <div class="absolute bottom-3 right-3 chip bg-black/70 text-white">${a.tag}</div>
+    </div>
+
+    <div class="p-4">
+      <h3 class="text-xl font-black leading-tight">${a.name}</h3>
+      <p class="mt-1 text-sm text-stone-500 font-bold">${a.type}</p>
+
+      <p class="mt-3 text-sm text-stone-700 leading-relaxed">${a.text}</p>
+
+      <div class="mt-4 rounded-2xl ${a.soft} p-3">
+        <p class="text-[11px] uppercase tracking-widest font-black text-stone-500">Insight / historia</p>
+        <p class="mt-1 text-sm font-bold text-stone-800">${a.fact}</p>
+      </div>
+    </div>
+  </div>`;
+}
+
+function dayBlock(d) {
+  return `
+  <article id="${d.id}" class="card scroll-mt-24">
+
+    <div class="relative">
+      <button onclick="slideGallery(this,-1)"
+        class="absolute left-3 top-1/2 -translate-y-1/2 z-10 bg-white/90 rounded-full w-11 h-11 text-3xl font-black shadow">‹</button>
+
+      <div class="slider">
+        ${d.images.map(src => `<img onclick="openModal(this)" class="slide" src="${src}" alt="${d.title}" onerror="safeImage(this, '${d.title.replace(/'/g,"")}')">`).join("")}
+      </div>
+
+      <button onclick="slideGallery(this,1)"
+        class="absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-white/90 rounded-full w-11 h-11 text-3xl font-black shadow">›</button>
+
+      <div class="absolute top-4 left-4 chip ${d.color} text-black">${d.day}</div>
+      <div class="absolute bottom-3 right-3 chip bg-black/70 text-white">Desliza · ${d.images.length}</div>
+    </div>
+
+    <div class="p-4 md:p-6 ${d.bg}">
+      <div class="flex flex-wrap gap-2 mb-4">
+        ${d.tags.map(t => `<span class="chip ${t.color} text-black">${t.label}</span>`).join("")}
+      </div>
+
+      <h2 class="text-3xl md:text-5xl font-black leading-none">${d.title}</h2>
+      <p class="mt-2 text-stone-600 font-bold">${d.subtitle}</p>
+
+      <div class="grid grid-cols-3 gap-2 md:gap-3 mt-4">
+        <div class="rounded-2xl bg-white/75 p-3 md:p-4">
+          <p class="text-[11px] font-black uppercase">Parque</p>
+          <p class="font-black md:text-xl">${d.park}</p>
+        </div>
+        <div class="rounded-2xl bg-white/75 p-3 md:p-4">
+          <p class="text-[11px] font-black uppercase">Energía</p>
+          <p class="font-black md:text-xl">${d.energy}</p>
+        </div>
+        <div class="rounded-2xl bg-white/75 p-3 md:p-4">
+          <p class="text-[11px] font-black uppercase">Clave</p>
+          <p class="font-black md:text-xl">${d.key}</p>
+        </div>
+      </div>
+
+      <div class="mt-5 p-4 rounded-3xl bg-white/75">
+        <p class="font-black uppercase text-xs tracking-widest text-stone-500">Lectura del día</p>
+        <p class="mt-2 text-stone-700 leading-relaxed">${d.insight}</p>
+      </div>
+
+      <div class="mt-5">
+        <p class="chip ${d.color} text-black inline-block">Horario recomendado</p>
+        <div class="mt-3 grid md:grid-cols-2 gap-2 text-sm">
+          ${d.timeline.map(i => `
+            <div class="mini-card p-3 flex gap-3 items-start">
+              <span class="font-black text-lg">${i.time}</span>
+              <span class="text-stone-700"><b>${i.title}</b><br>${i.note}</span>
+            </div>
+          `).join("")}
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-4 mt-6">
+        ${d.attractions.map(attractionCard).join("")}
+      </div>
+
+      <div class="mt-5 p-4 rounded-3xl bg-black text-white">
+        <p class="font-black uppercase text-xs tracking-widest text-white/60">Decisión de un vistazo</p>
+        <p class="mt-2 text-lg font-black">${d.decision}</p>
+      </div>
+    </div>
+  </article>`;
+}
+
+const days = [
+  {
+    id: "domingo",
+    day: "Domingo · 3 mayo",
+    color: "bg-yellow-300",
+    bg: "bg-yellow-50",
+    title: "Aterrizaje emocional",
+    subtitle: "Studios → Disneyland Park. Empezar con conexión, no con checklist.",
+    park: "2 parques",
+    energy: "Media",
+    key: "Frozen",
+    tags: [
+      {label:"Primera emoción", color:"bg-yellow-300"},
+      {label:"Sin prisas", color:"bg-lime-300"},
+      {label:"Cierre suave", color:"bg-pink-300"}
+    ],
+    insight: "Este día debe sentirse como una primera entrada suave al mundo Disney: una emoción fuerte, una inmersión amable y un cierre sin exprimir. La clave no es hacer mucho, sino conseguir que la primera tarde tenga una forma clara: entrar, conectar, bajar el ritmo y salir con hambre de más.",
+    decision: "Si la primera emoción funciona, no hace falta forzar el resto del día.",
+    images: [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Disneyland_Paris_Walt_Disney_Studios_entrance.jpg/1280px-Disneyland_Paris_Walt_Disney_Studios_entrance.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Disneyland_Paris_Castle.jpg/1280px-Disneyland_Paris_Castle.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Disneyland_Paris_-_Main_Street_USA.jpg/1280px-Disneyland_Paris_-_Main_Street_USA.jpg"
+    ],
+    timeline: [
+      {time:"13:00", title:"Entrar", note:"Walt Disney Studios Park. Caminar directo, sin dispersarse."},
+      {time:"13:20", title:"Frozen primero", note:"La pieza emocional del día."},
+      {time:"14:30", title:"Ratatouille", note:"Inmersión familiar y cambio de escala."},
+      {time:"15:45", title:"Place de Rémy", note:"Explorar, observar, bajar ritmo."},
+      {time:"17:00", title:"Cambio de parque", note:"Entrada suave a Disneyland Park."},
+      {time:"18:30", title:"Parade", note:"Primer gran recuerdo colectivo."},
+      {time:"19:30", title:"Cierre ligero", note:"Pirates o Big Thunder, según energía."}
+    ],
+    attractions: [
+      {
+        time:"13:20",
+        tag:"Keystone",
+        name:"Frozen / World of Frozen",
+        type:"Entrada emocional",
+        color:"bg-sky-300",
+        soft:"bg-sky-100",
+        img:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Arendelle_The_World_of_Frozen_-_Hong_Kong_Disneyland.jpg/1280px-Arendelle_The_World_of_Frozen_-_Hong_Kong_Disneyland.jpg",
+        text:"Este es el punto más importante del día. No es una atracción más: es la puerta emocional del viaje para ella. Si entra aquí, el resto del parque deja de ser una lista de cosas y se convierte en un mundo propio.",
+        fact:"Frozen se ha convertido en una de las franquicias Disney más potentes para primeras experiencias infantiles."
+      },
+      {
+        time:"14:30",
+        tag:"Inmersión",
+        name:"Ratatouille: The Adventure",
+        type:"Mundo pequeño, sensación grande",
+        color:"bg-orange-300",
+        soft:"bg-orange-100",
+        img:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Ratatouille_The_Adventure.jpg/1280px-Ratatouille_The_Adventure.jpg",
+        text:"Después de Frozen, Ratatouille transforma la emoción en juego físico. Es una atracción especialmente buena para el primer día porque no exige épica: te mete en un mundo reconocible, divertido y familiar.",
+        fact:"La atracción usa vehículos trackless, lo que permite movimientos más impredecibles que una dark ride tradicional."
+      },
+      {
+        time:"15:45",
+        tag:"Pausa",
+        name:"Place de Rémy",
+        type:"Atmósfera sin presión",
+        color:"bg-lime-300",
+        soft:"bg-lime-100",
+        img:"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Place_de_Remy_Disneyland_Paris.jpg/1280px-Place_de_Remy_Disneyland_Paris.jpg",
+        text:"Este no es un momento para correr. Es el sitio ideal para dejar que el cuerpo baje, mirar detalles, hacer fotos, sentarse un poco y seguir dentro de la magia sin sumar otra decisión grande.",
+        fact:"La zona reproduce una pequeña plaza parisina inspirada en el universo de Ratatouille."
+      },
+      {
+        time:"Opcional",
+        tag:"Extra",
+        name:"Toy Soldiers Parachute Drop",
+        type:"Mini-adrenalina si hay energía",
+        color:"bg-green-300",
+        soft:"bg-green-100",
+        img:"https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Toy_Soldiers_Parachute_Drop.jpg/1280px-Toy_Soldiers_Parachute_Drop.jpg",
+        text:"Úsalo solo si el grupo todavía está activo. Funciona como pequeña descarga de aventura sin convertir la tarde en una carrera por atracciones.",
+        fact:"Está tematizada como si los visitantes fueran juguetes dentro del mundo de Toy Story."
+      },
+      {
+        time:"Opcional",
+        tag:"Refugio",
+        name:"Animation Academy",
+        type:"Plan si hay cansancio o clima malo",
+        color:"bg-pink-300",
+        soft:"bg-pink-100",
+        img:"https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Animation_Academy_Disneyland_Paris.jpg/1280px-Animation_Academy_Disneyland_Paris.jpg",
+        text:"Perfecta si el cuerpo pide sentarse sin apagar el viaje. Cambia consumo por creación: ella no solo mira Disney, dibuja Disney.",
+        fact:"Las Animation Academy nacen de la tradición de los estudios Disney y su cultura de dibujo de personajes."
+      },
+      {
+        time:"17:30",
+        tag:"Símbolo",
+        name:"Sleeping Beauty Castle",
+        type:"Entrada al cuento",
+        color:"bg-purple-300",
+        soft:"bg-purple-100",
+        img:"https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Disneyland_Paris_Castle.jpg/1280px-Disneyland_Paris_Castle.jpg",
+        text:"El castillo no es una parada decorativa: marca el cambio de capítulo. Pasáis de la tarde en Studios al imaginario clásico de Disneyland.",
+        fact:"El castillo de París tiene una estética más europea y de cuento medieval que otros castillos Disney."
+      },
+      {
+        time:"17:45",
+        tag:"Calma",
+        name:"It’s a Small World",
+        type:"Regulador emocional",
+        color:"bg-lime-300",
+        soft:"bg-lime-100",
+        img:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/It%27s_a_Small_World_Disneyland_Paris.jpg/1280px-It%27s_a_Small_World_Disneyland_Paris.jpg",
+        text:"Baja la intensidad sin cortar la magia. Es repetitiva, luminosa, musical y segura: justo lo que hace falta antes de la parade.",
+        fact:"La versión original de It’s a Small World se creó para la Feria Mundial de Nueva York de 1964."
+      },
+      {
+        time:"18:30",
+        tag:"Memoria",
+        name:"Disney Stars on Parade",
+        type:"Primer gran recuerdo colectivo",
+        color:"bg-yellow-300",
+        soft:"bg-yellow-100",
+        img:"https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Disneyland_Paris_Parade.jpg/1280px-Disneyland_Paris_Parade.jpg",
+        text:"Este momento tiene que vivirse sin prisa. Es música, personajes, escala y multitud compartida. Para una niña, puede ser más importante que muchas rides.",
+        fact:"Las parades funcionan como ritual colectivo: concentran muchos personajes sin tener que perseguir encuentros sueltos."
+      },
+      {
+        time:"19:30",
+        tag:"Cierre A",
+        name:"Pirates of the Caribbean",
+        type:"Cierre narrativo",
+        color:"bg-stone-300",
+        soft:"bg-stone-100",
+        img:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Pirates_of_the_Caribbean_Disneyland_Paris.jpg/1280px-Pirates_of_the_Caribbean_Disneyland_Paris.jpg",
+        text:"Oscuridad suave, historia y ritmo lento. Es una forma muy buena de cerrar el día sin exigir demasiada energía física.",
+        fact:"La saga de películas de Piratas nació después de la atracción, no al revés."
+      },
+      {
+        time:"19:30",
+        tag:"Cierre B",
+        name:"Big Thunder Mountain",
+        type:"Cierre con adrenalina",
+        color:"bg-orange-300",
+        soft:"bg-orange-100",
+        img:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Big_Thunder_Mountain_Disneyland_Paris.jpg/1280px-Big_Thunder_Mountain_Disneyland_Paris.jpg",
+        text:"Úsala solo si queda energía real. Puede ser un final épico, pero si el grupo está cansado puede convertir un día redondo en uno demasiado largo.",
+        fact:"La versión de París está en una isla, lo que la hace especialmente escénica frente a otras versiones Disney."
+      }
+    ]
+  },
+
+  {
+    id:"lunes",
+    day:"Lunes · 4 mayo",
+    color:"bg-indigo-300",
+    bg:"bg-indigo-50",
+    title:"Star Wars Day vivido de verdad",
+    subtitle:"Disneyland Park only. Inmersión antes que cantidad.",
+    park:"Disneyland",
+    energy:"Alta",
+    key:"Discoveryland",
+    tags:[
+      {label:"Star Wars Day", color:"bg-indigo-300"},
+      {label:"Universo completo", color:"bg-blue-300"},
+      {label:"Noche final", color:"bg-pink-300"}
+    ],
+    insight:"Este día funciona si se vive como un universo completo: no entrar, tachar atracciones y salir, sino permanecer dentro del ambiente. Discoveryland no es una zona de paso; es el centro narrativo del día.",
+    decision:"No salgas de Discoveryland demasiado pronto: ahí está el día.",
+    images:[
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Discoveryland_Disneyland_Paris.jpg/1280px-Discoveryland_Disneyland_Paris.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Space_Mountain_Disneyland_Paris.jpg/1280px-Space_Mountain_Disneyland_Paris.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Star_Tours_Disneyland_Paris.jpg/1280px-Star_Tours_Disneyland_Paris.jpg"
+    ],
+    timeline:[
+      {time:"09:30", title:"Entrar", note:"Disneyland Park solamente."},
+      {time:"09:40", title:"Discoveryland", note:"Quedarse dentro, sin dispersarse."},
+      {time:"10:00", title:"Hyperspace Mountain", note:"Pico de intensidad temprano."},
+      {time:"10:45", title:"Star Tours", note:"Viaje narrativo Star Wars."},
+      {time:"11:45", title:"Buzz", note:"Juego activo y más ligero."},
+      {time:"13:00", title:"Lion King", note:"Reset sentado y emocional."},
+      {time:"14:30", title:"Adventure block", note:"Pirates + Phantom Manor."},
+      {time:"17:00", title:"Discoveryland otra vez", note:"Segunda vuelta más calmada."},
+      {time:"20:30", title:"Illuminations", note:"Cierre ceremonial."}
+    ],
+    attractions:[
+      {
+        time:"09:40",
+        tag:"Zona",
+        name:"Discoveryland",
+        type:"El universo del día",
+        color:"bg-indigo-300",
+        soft:"bg-indigo-100",
+        img:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Discoveryland_Disneyland_Paris.jpg/1280px-Discoveryland_Disneyland_Paris.jpg",
+        text:"Quédate aquí. No lo trates como una zona de paso. Discoveryland es lo que convierte el lunes en Star Wars Day de verdad: arquitectura, música, máquinas, luces y sensación de futuro retro.",
+        fact:"Discoveryland en París fue concebida con inspiración retrofuturista europea, distinta al Tomorrowland americano."
+      },
+      {
+        time:"10:00",
+        tag:"Pico",
+        name:"Star Wars Hyperspace Mountain",
+        type:"Adrenalina adulta",
+        color:"bg-red-300",
+        soft:"bg-red-100",
+        img:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Space_Mountain_Disneyland_Paris.jpg/1280px-Space_Mountain_Disneyland_Paris.jpg",
+        text:"Es la experiencia fuerte del día. Mejor temprano, cuando todavía hay energía y ganas. Para adultos es adrenalina; para ella, es ver que Disney también puede ser grande e intenso.",
+        fact:"Space Mountain de París fue la primera versión Disney con lanzamiento tipo catapulta."
+      },
+      {
+        time:"10:45",
+        tag:"Viaje",
+        name:"Star Tours",
+        type:"Narrativa Star Wars",
+        color:"bg-blue-300",
+        soft:"bg-blue-100",
+        img:"https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Star_Tours_Disneyland_Paris.jpg/1280px-Star_Tours_Disneyland_Paris.jpg",
+        text:"Aquí Star Wars deja de ser decoración y se vuelve experiencia. No se mira el universo: se viaja dentro de él.",
+        fact:"Star Tours puede combinar escenas diferentes, de modo que no todos los viajes son exactamente iguales."
+      },
+      {
+        time:"11:45",
+        tag:"Juego",
+        name:"Buzz Lightyear Laser Blast",
+        type:"Control y risa",
+        color:"bg-green-300",
+        soft:"bg-green-100",
+        img:"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Buzz_Lightyear_Laser_Blast.jpg/1280px-Buzz_Lightyear_Laser_Blast.jpg",
+        text:"Después de tanta épica espacial, Buzz devuelve el control. Es juego puro, puntuación, risa y participación inmediata.",
+        fact:"Es una de las rides Disney donde el visitante compite activamente con marcador propio."
+      },
+      {
+        time:"13:00",
+        tag:"Reset",
+        name:"The Lion King: Rhythms of the Pride Lands",
+        type:"Espectáculo de alto nivel",
+        color:"bg-yellow-300",
+        soft:"bg-yellow-100",
+        img:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/The_Lion_King_Rhythms_of_the_Pride_Lands.jpg/1280px-The_Lion_King_Rhythms_of_the_Pride_Lands.jpg",
+        text:"Es la pausa perfecta: el cuerpo se sienta, pero la emoción sigue arriba. También demuestra que Disney no es solo rides; puede ser espectáculo físico, música y presencia escénica.",
+        fact:"El show combina canto, danza, acrobacia y percusión en vivo inspirada en El Rey León."
+      },
+      {
+        time:"14:30",
+        tag:"Aventura",
+        name:"Pirates of the Caribbean",
+        type:"Cambio de registro",
+        color:"bg-stone-300",
+        soft:"bg-stone-100",
+        img:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Pirates_of_the_Caribbean_Disneyland_Paris.jpg/1280px-Pirates_of_the_Caribbean_Disneyland_Paris.jpg",
+        text:"Cambia de galaxias a aventura clásica sin perder narrativa. Es una buena forma de abrir el bloque de tarde.",
+        fact:"La versión parisina tiene una secuencia narrativa distinta a la de Disneyland California."
+      },
+      {
+        time:"15:30",
+        tag:"Misterio",
+        name:"Phantom Manor",
+        type:"Rareza, humor oscuro y atmósfera",
+        color:"bg-purple-300",
+        soft:"bg-purple-100",
+        img:"https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Phantom_Manor_Disneyland_Paris.jpg/1280px-Phantom_Manor_Disneyland_Paris.jpg",
+        text:"Introduce una emoción distinta: curiosidad, misterio, algo de rareza. Es ideal si ella tolera bien la oscuridad y el tono fantasmagórico.",
+        fact:"Phantom Manor tiene una historia propia conectada con Frontierland y la familia Ravenswood."
+      },
+      {
+        time:"17:00",
+        tag:"Vuelta",
+        name:"Discoveryland segunda vuelta",
+        type:"Profundización calmada",
+        color:"bg-indigo-300",
+        soft:"bg-indigo-100",
+        img:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Discoveryland_Disneyland_Paris.jpg/1280px-Discoveryland_Disneyland_Paris.jpg",
+        text:"La segunda vuelta suele ser más rica que la primera porque ya no hay ansiedad por hacerlo todo. Se miran detalles, se repiten sensaciones y el día toma forma.",
+        fact:"Volver a una zona ya conocida reduce la carga de decisión y mejora la percepción de disfrute."
+      },
+      {
+        time:"20:30",
+        tag:"Final",
+        name:"Disney Illuminations",
+        type:"Cierre ceremonial",
+        color:"bg-pink-300",
+        soft:"bg-pink-100",
+        img:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Disney_Illuminations_Disneyland_Paris.jpg/1280px-Disney_Illuminations_Disneyland_Paris.jpg",
+        text:"El día necesita un final ceremonial. Luces, música, castillo y noche convierten el lunes en algo que se recuerda como capítulo completo.",
+        fact:"Los shows nocturnos Disney usan proyecciones sobre el castillo, fuentes, música, luces y pirotecnia."
+      }
+    ]
+  },
+
+  {
+    id:"martes",
+    day:"Martes · 5 mayo",
+    color:"bg-purple-300",
+    bg:"bg-purple-50",
+    title:"Balance y regreso a su mundo",
+    subtitle:"Studios con intención: no completar rides, sino reforzar recuerdos.",
+    park:"Studios",
+    energy:"Flexible",
+    key:"Repetir",
+    tags:[
+      {label:"Balance", color:"bg-purple-300"},
+      {label:"Gran show", color:"bg-pink-300"},
+      {label:"Repetición emocional", color:"bg-sky-300"}
+    ],
+    insight:"Este día corrige el exceso de lista: combina una entrada táctica, un gran show y la posibilidad de volver a lo que emocionalmente funcionó. Repetir lo que ella amó no es perder tiempo: es construir memoria.",
+    decision:"Repetir Frozen no es repetir: es consolidar memoria.",
+    images:[
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Disneyland_Paris_Walt_Disney_Studios_entrance.jpg/1280px-Disneyland_Paris_Walt_Disney_Studios_entrance.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Crush%27s_Coaster.jpg/1280px-Crush%27s_Coaster.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Avengers_Campus_Paris.jpg/1280px-Avengers_Campus_Paris.jpg"
+    ],
+    timeline:[
+      {time:"09:30", title:"Entrar", note:"Walt Disney Studios Park."},
+      {time:"09:35", title:"Crush’s Coaster", note:"Movimiento temprano si hay energía."},
+      {time:"11:00", title:"Spider-Man WEB", note:"Juego activo y protagonismo."},
+      {time:"Opcional", title:"Flight Force", note:"Solo si el cuerpo pide intensidad."},
+      {time:"12:30", title:"Mickey and the Magician", note:"Capa emocional grande."},
+      {time:"14:00", title:"Frozen repeat", note:"Si ella lo pide, decir sí."},
+      {time:"15:30", title:"Tiempo humano", note:"Paseo, descubrimientos, cero presión."},
+      {time:"Opcional", title:"Hop a Disneyland", note:"Solo si apetece de verdad."}
+    ],
+    attractions:[
+      {
+        time:"09:35",
+        tag:"Táctico",
+        name:"Crush’s Coaster",
+        type:"Movimiento, giro y sorpresa",
+        color:"bg-blue-300",
+        soft:"bg-blue-100",
+        img:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Crush%27s_Coaster.jpg/1280px-Crush%27s_Coaster.jpg",
+        text:"Si la vais a hacer, mejor temprano. Es una atracción que puede marcar el día por sus colas, así que conviene resolverla sin que se convierta en deuda mental.",
+        fact:"Crush’s Coaster suele ser una de las atracciones con más demanda de Walt Disney Studios Park."
+      },
+      {
+        time:"11:00",
+        tag:"Activo",
+        name:"Spider-Man W.E.B. Adventure",
+        type:"Protagonismo infantil",
+        color:"bg-red-300",
+        soft:"bg-red-100",
+        img:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Avengers_Campus_Paris.jpg/1280px-Avengers_Campus_Paris.jpg",
+        text:"Convierte al visitante en protagonista. Después de rides más pasivas, aquí ella actúa, apunta, mueve brazos y participa.",
+        fact:"La atracción usa reconocimiento de movimiento para que los gestos del visitante lancen telarañas virtuales."
+      },
+      {
+        time:"Opcional",
+        tag:"Intenso",
+        name:"Avengers Assemble: Flight Force",
+        type:"Extra de adrenalina",
+        color:"bg-stone-300",
+        soft:"bg-stone-100",
+        img:"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Avengers_Assemble_Flight_Force.jpg/1280px-Avengers_Assemble_Flight_Force.jpg",
+        text:"Solo tiene sentido si el grupo pide intensidad. No debería entrar por obligación Marvel ni por completar zona.",
+        fact:"Flight Force reutiliza la estructura de la antigua Rock ’n’ Roller Coaster con una nueva tematización Marvel."
+      },
+      {
+        time:"12:30",
+        tag:"Show",
+        name:"Mickey and the Magician",
+        type:"Gran capa emocional",
+        color:"bg-pink-300",
+        soft:"bg-pink-100",
+        img:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Mickey_and_the_Magician.jpg/1280px-Mickey_and_the_Magician.jpg",
+        text:"Este es uno de los grandes momentos del viaje. No es descanso pasivo: es magia escénica, música, personajes y emoción concentrada.",
+        fact:"El espectáculo reúne distintos universos Disney alrededor de Mickey como aprendiz de mago."
+      },
+      {
+        time:"14:00",
+        tag:"Repetir",
+        name:"Frozen repeat",
+        type:"Refuerzo emocional",
+        color:"bg-sky-300",
+        soft:"bg-sky-100",
+        img:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Arendelle_The_World_of_Frozen_-_Hong_Kong_Disneyland.jpg/1280px-Arendelle_The_World_of_Frozen_-_Hong_Kong_Disneyland.jpg",
+        text:"Si ella lo pide, esto no es repetir. Es volver al lugar donde el viaje se volvió suyo. La segunda vez puede ser incluso más importante que la primera.",
+        fact:"En niños, repetir una experiencia querida ayuda a fijarla como recuerdo estable y narrable."
+      },
+      {
+        time:"15:30",
+        tag:"Libre",
+        name:"Paseo sin presión",
+        type:"Tiempo humano",
+        color:"bg-lime-300",
+        soft:"bg-lime-100",
+        img:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Disneyland_Paris_Walt_Disney_Studios_entrance.jpg/1280px-Disneyland_Paris_Walt_Disney_Studios_entrance.jpg",
+        text:"Aquí no hace falta optimizar. Caminar, mirar escaparates, descubrir rincones o simplemente estar juntos también es parque.",
+        fact:"Las pausas no planificadas suelen mejorar el recuerdo global porque reducen saturación y fatiga."
+      },
+      {
+        time:"Opcional",
+        tag:"Flex",
+        name:"Hop back a Disneyland Park",
+        type:"Flexibilidad final",
+        color:"bg-yellow-300",
+        soft:"bg-yellow-100",
+        img:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Disneyland_Paris_Castle.jpg/1280px-Disneyland_Paris_Castle.jpg",
+        text:"Volved solo si apetece de verdad. Puede ser una atracción favorita, un paseo por Main Street o simplemente recuperar la atmósfera del parque clásico.",
+        fact:"Moverse de parque tiene sentido si añade emoción; si solo añade cansancio, no compensa."
+      }
+    ]
+  },
+
+  {
+    id:"miercoles",
+    day:"Miércoles · 6 mayo",
+    color:"bg-green-300",
+    bg:"bg-green-50",
+    title:"Cierre calmado",
+    subtitle:"Disneyland Park. Darle control, elegir una cosa adulta y salir a tiempo.",
+    park:"Disneyland",
+    energy:"Suave",
+    key:"Cerrar bien",
+    tags:[
+      {label:"Última mañana", color:"bg-green-300"},
+      {label:"Ella decide", color:"bg-yellow-300"},
+      {label:"Salida suave", color:"bg-lime-300"}
+    ],
+    insight:"El último día no debe intentar compensar nada. Debe ordenar emocionalmente el viaje y dejar una sensación de plenitud. La clave es salir antes de que el cansancio borre la magia.",
+    decision:"El mejor final es irse antes de que el cansancio borre la magia.",
+    images:[
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Disneyland_Paris_Castle.jpg/1280px-Disneyland_Paris_Castle.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Disneyland_Railroad_Paris.jpg/1280px-Disneyland_Railroad_Paris.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/It%27s_a_Small_World_Disneyland_Paris.jpg/1280px-It%27s_a_Small_World_Disneyland_Paris.jpg"
+    ],
+    timeline:[
+      {time:"09:30", title:"Entrar", note:"Disneyland Park sin prisa."},
+      {time:"09:45", title:"Su elección", note:"Preguntar qué quiere repetir."},
+      {time:"10:45", title:"Una elección adulta", note:"Big Thunder o Pirates."},
+      {time:"11:45", title:"Momento lento", note:"Railroad, Castle, Fantasyland."},
+      {time:"12:30", title:"Salida", note:"Dejarlo lleno, no exprimido."}
+    ],
+    attractions:[
+      {
+        time:"09:45",
+        tag:"Ella",
+        name:"Su elección",
+        type:"Propiedad del viaje",
+        color:"bg-yellow-300",
+        soft:"bg-yellow-100",
+        img:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/It%27s_a_Small_World_Disneyland_Paris.jpg/1280px-It%27s_a_Small_World_Disneyland_Paris.jpg",
+        text:"La primera decisión del día debe ser suya. Preguntar “¿qué quieres hacer otra vez antes de irnos?” cambia completamente el cierre: ya no es un plan impuesto, es su despedida.",
+        fact:"Dar elección a un niño aumenta la sensación de control y mejora el recuerdo positivo de una experiencia."
+      },
+      {
+        time:"10:45",
+        tag:"Adulto A",
+        name:"Big Thunder Mountain",
+        type:"Aventura compartida",
+        color:"bg-orange-300",
+        soft:"bg-orange-100",
+        img:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Big_Thunder_Mountain_Disneyland_Paris.jpg/1280px-Big_Thunder_Mountain_Disneyland_Paris.jpg",
+        text:"Si hay energía, es una gran elección adulta/familiar. Da una última aventura con cuerpo, risa y emoción compartida.",
+        fact:"La versión parisina de Big Thunder Mountain es famosa por su recorrido escénico alrededor de una isla."
+      },
+      {
+        time:"10:45",
+        tag:"Adulto B",
+        name:"Pirates of the Caribbean",
+        type:"Alternativa narrativa",
+        color:"bg-stone-300",
+        soft:"bg-stone-100",
+        img:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Pirates_of_the_Caribbean_Disneyland_Paris.jpg/1280px-Pirates_of_the_Caribbean_Disneyland_Paris.jpg",
+        text:"Si no apetece adrenalina, Pirates da cierre con atmósfera, historia y oscuridad suave. Es menos exigente que Big Thunder.",
+        fact:"Pirates es una de las atracciones que mejor representa la tradición Disney de contar historias con escenarios físicos."
+      },
+      {
+        time:"11:45",
+        tag:"Transición",
+        name:"Disneyland Railroad",
+        type:"Despedida sin corte brusco",
+        color:"bg-lime-300",
+        soft:"bg-lime-100",
+        img:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Disneyland_Railroad_Paris.jpg/1280px-Disneyland_Railroad_Paris.jpg",
+        text:"El tren es perfecto para cerrar: sigues dentro del parque, pero el cuerpo ya está bajando. Convierte la salida en transición, no en ruptura.",
+        fact:"El Disneyland Railroad rodea el parque y permite ver zonas desde una perspectiva distinta."
+      },
+      {
+        time:"12:00",
+        tag:"Última mirada",
+        name:"Castle / Fantasyland wandering",
+        type:"Caminar sin objetivo",
+        color:"bg-pink-300",
+        soft:"bg-pink-100",
+        img:"https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Disneyland_Paris_Castle.jpg/1280px-Disneyland_Paris_Castle.jpg",
+        text:"No busques eficiencia aquí. La última media hora debe ser mirar, caminar, comprar algo pequeño si apetece y dejar que el recuerdo se asiente.",
+        fact:"Las transiciones lentas ayudan a que el final de una experiencia se recuerde como algo agradable, no como una interrupción."
+      },
+      {
+        time:"12:30–13:30",
+        tag:"Salir",
+        name:"Salida consciente",
+        type:"Irse queriendo volver",
+        color:"bg-green-300",
+        soft:"bg-green-100",
+        img:"https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Disneyland_Paris_-_Main_Street_USA.jpg/1280px-Disneyland_Paris_-_Main_Street_USA.jpg",
+        text:"El último gesto importante es no apurar. Salir cuando todavía se siente lleno protege todo el viaje.",
+        fact:"En viajes con niños, el final pesa mucho en la memoria global: evitar el agotamiento final mejora el recuerdo completo."
+      }
+    ]
+  }
+];
+
+document.getElementById("content").innerHTML = days.map(dayBlock).join("");
+</script>
+
+</body>
+</html>
