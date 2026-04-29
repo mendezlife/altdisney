@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Disneyland Paris · Viaje Familiar</title>
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body {
+    background:#f2eadf;
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    color:#171717;
+  }
+  body.locked main { display:none; }
+  .app {
+    max-width:980px;
+    margin:auto;
+    background:#f8f3ea;
+    min-height:100vh;
+  }
+  .card {
+    border-radius:30px;
+    background:#fffaf2;
+    box-shadow:0 14px 34px rgba(0,0,0,.08);
+    border:1px solid rgba(0,0,0,.06);
+    overflow:hidden;
+  }
+  .mini-card {
+    border-radius:22px;
+    background:rgba(255,255,255,.75);
+    border:1px solid rgba(0,0,0,.06);
+  }
+  .chip {
+    border-radius:999px;
+    padding:6px 10px;
+    font-size:11px;
+    font-weight:900;
+    text-transform:uppercase;
+    letter-spacing:.03em;
+    white-space:nowrap;
+  }
+</style>
+</head>
+
+<body class="locked">
+
+<script>
+(function () {
+  const USER = "Piojos";
+  const PASS = "Disney2026Piojos";
+
+  const u = prompt("Usuario:");
+  const p = prompt("Contraseña:");
+
+  if (u === USER && p === PASS) {
+    document.body.classList.remove("locked");
+  } else {
+    document.body.innerHTML = `
+      <div style="font-family:system-ui;background:#111;color:white;display:flex;align-items:center;justify-content:center;height:100vh;text-align:center;">
+        <div>
+          <h1 style="font-size:2rem;font-weight:bold;">Acceso denegado</h1>
+          <p style="opacity:.7;margin-top:10px;">Credenciales incorrectas.</p>
+        </div>
+      </div>
+    `;
+  }
+})();
+</script>
+
+<main class="app pb-24">
+
+<!-- HERO -->
+<section class="relative h-[500px] md:h-[620px] overflow-hidden rounded-b-[44px]">
+  <img
+    src="https://images.unsplash.com/photo-1590144662036-33bf0ebd2c7f?auto=format&fit=crop&w=1600&q=80"
+    class="absolute inset-0 w-full h-full object-cover"
+    alt="Viaje familiar a Disneyland Paris"
+  />
+  <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10"></div>
+
+  <div class="absolute top-5 left-5 right-5 flex justify-between gap-3">
+    <div class="bg-white/90 rounded-3xl px-4 py-3 shadow">
+      <p class="text-[11px] uppercase font-black tracking-widest text-stone-500">Reserva</p>
+      <p class="font-black">604516617</p>
+    </div>
+    <div class="bg-black/70 text-white rounded-3xl px-4 py-3 text-right">
+      <p class="text-[11px] uppercase font-black tracking-widest text-white/70">Viajeros</p>
+      <p class="font-black">2 adultos · 1 niña</p>
+    </div>
+  </div>
+
+  <div class="absolute bottom-8 left-5 right-5 text-white">
+    <span class="chip bg-lime-300 text-black inline-block mb-4">Disneyland Paris · 3–6 mayo 2026</span>
+    <h1 class="text-5xl md:text-7xl font-black leading-[.9] tracking-tight">
+      Panel rápido del viaje
+    </h1>
+    <p class="mt-4 text-white/85 text-lg md:text-2xl max-w-2xl">
+      Todo lo importante a mano: vuelos, hotel, traslados, tickets y contactos.
+    </p>
+  </div>
+</section>
+
+<!-- NAV -->
+<section class="sticky top-0 z-30 bg-[#f8f3ea]/90 backdrop-blur px-4 md:px-6 py-3 border-b border-black/5 overflow-x-auto">
+  <div class="flex gap-2">
+    <a href="#timeline" class="chip bg-lime-300 text-black">Timeline</a>
+    <a href="#vuelos" class="chip bg-sky-300 text-black">Vuelos</a>
+    <a href="#hotel" class="chip bg-orange-300 text-black">Hotel</a>
+    <a href="#traslados" class="chip bg-pink-300 text-black">Traslados</a>
+    <a href="#tickets" class="chip bg-purple-300 text-black">Billetes</a>
+    <a href="#contactos" class="chip bg-yellow-300 text-black">Contactos</a>
+  </div>
+</section>
+
+<!-- RESUMEN -->
+<section class="p-4 md:p-6 grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+  <div class="card p-4 md:p-6 bg-black text-white">
+    <p class="text-4xl font-black">3</p>
+    <p class="text-sm font-bold mt-1">noches</p>
+  </div>
+
+  <div class="card p-4 md:p-6">
+    <p class="text-4xl font-black">3</p>
+    <p class="text-sm font-bold mt-1">viajeros</p>
+  </div>
+
+  <div class="card p-4 md:p-6 bg-yellow-100">
+    <p class="text-4xl font-black">AF</p>
+    <p class="text-sm font-bold mt-1">Air France</p>
+  </div>
+
+  <div class="card p-4 md:p-6 bg-lime-100">
+    <p class="text-4xl font-black">B&B</p>
+    <p class="text-sm font-bold mt-1">hotel + desayuno</p>
+  </div>
+</section>
+
+<!-- DECISION RAPIDA -->
+<section class="px-4 md:px-6 pb-6">
+  <div class="card p-5 md:p-6 bg-[#171717] text-white">
+    <p class="chip bg-lime-300 text-black inline-block">Lo esencial</p>
+    <div class="grid md:grid-cols-4 gap-3 mt-4 text-sm">
+      <div class="mini-card bg-white/10 p-4"><b>Ida</b><br />03/05 · BCN 10:05 → CDG 12:00</div>
+      <div class="mini-card bg-white/10 p-4"><b>Hotel</b><br />03/05–06/05 · Family · desayuno</div>
+      <div class="mini-card bg-white/10 p-4"><b>Vuelta</b><br />06/05 · CDG 20:55 → BCN 22:45</div>
+      <div class="mini-card bg-white/10 p-4"><b>Ojo</b><br />Vuelos sin maleta facturada</div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="timeline" class="p-4 md:p-6">
+  <article class="card p-5 md:p-7">
+    <h2 class="text-3xl md:text-5xl font-black leading-none">Timeline del viaje</h2>
+    <p class="mt-2 text-stone-500 font-bold">La secuencia completa, de puerta a puerta.</p>
+
+    <div class="mt-6 space-y-4">
+      <div class="mini-card p-4 bg-lime-100">
+        <p class="chip bg-lime-300 text-black inline-block">Domingo 3 mayo</p>
+        <h3 class="text-xl font-black mt-3">Salida Barcelona → llegada París</h3>
+        <p class="mt-2 text-sm text-stone-700">
+          Vuelo AF1149 · Barcelona-El Prat T1 10:05 → París CDG 2F 12:00.  
+          Hora límite de facturación indicada: 09:25.
+        </p>
+      </div>
+
+      <div class="mini-card p-4 bg-sky-100">
+        <p class="chip bg-sky-300 text-black inline-block">Domingo 3 mayo</p>
+        <h3 class="text-xl font-black mt-3">Magical Shuttle CDG → Disney</h3>
+        <p class="mt-2 text-sm text-stone-700">
+          Traslado colectivo contratado para 2 adultos + 1 niña. Hay que tener los tickets del Magical Shuttle emitidos por la agencia.
+        </p>
+      </div>
+
+      <div class="mini-card p-4 bg-orange-100">
+        <p class="chip bg-orange-300 text-black inline-block">3–6 mayo</p>
+        <h3 class="text-xl font-black mt-3">Hotel</h3>
+        <p class="mt-2 text-sm text-stone-700">
+          B&B HOTEL près de Disneyland Paris · habitación FAMILY · alojamiento y desayuno · referencia proveedor 32364141.
+        </p>
+      </div>
+
+      <div class="mini-card p-4 bg-pink-100">
+        <p class="chip bg-pink-300 text-black inline-block">Miércoles 6 mayo</p>
+        <h3 class="text-xl font-black mt-3">Regreso Disney → CDG → Barcelona</h3>
+        <p class="mt-2 text-sm text-stone-700">
+          Magical Shuttle de regreso a CDG. Recomendación del documento: cogerlo 3,5–4 horas antes del vuelo.  
+          Vuelo AF1448 · CDG 2F 20:55 → Barcelona T1 22:45.
+        </p>
+      </div>
+    </div>
+  </article>
+</section>
+
+<!-- VIAJEROS -->
+<section class="p-4 md:p-6">
+  <article class="card p-5 md:p-7">
+    <h2 class="text-3xl md:text-5xl font-black leading-none">Viajeros</h2>
+    <div class="grid md:grid-cols-3 gap-3 mt-5">
+      <div class="mini-card p-4">
+        <p class="chip bg-black text-white">Adulto</p>
+        <h3 class="font-black mt-3">Rafael Orlando Méndez Parra</h3>
+        <p class="text-sm text-stone-600 mt-1">49 años</p>
+      </div>
+      <div class="mini-card p-4">
+        <p class="chip bg-black text-white">Adulto</p>
+        <h3 class="font-black mt-3">Encarnación López Alameda</h3>
+        <p class="text-sm text-stone-600 mt-1">48 años</p>
+      </div>
+      <div class="mini-card p-4 bg-yellow-100">
+        <p class="chip bg-yellow-300 text-black">Niña</p>
+        <h3 class="font-black mt-3">Alejandra Isabel Méndez López</h3>
+        <p class="text-sm text-stone-600 mt-1">8 años</p>
+      </div>
+    </div>
+  </article>
+</section>
+
+<!-- VUELOS -->
+<section id="vuelos" class="p-4 md:p-6">
+  <article class="card p-5 md:p-7">
+    <h2 class="text-3xl md:text-5xl font-black leading-none">Vuelos Air France</h2>
+    <p class="mt-2 text-stone-500 font-bold">Localizador aéreo: ZDU6ZJ</p>
+
+    <div class="grid md:grid-cols-2 gap-4 mt-6">
+      <div class="mini-card p-5 bg-sky-100">
+        <p class="chip bg-sky-300 text-black">Ida · AF1149</p>
+        <h3 class="text-2xl font-black mt-3">BCN → CDG</h3>
+        <p class="mt-3 text-sm text-stone-700">
+          <b>Fecha:</b> 03/05/26<br>
+          <b>Salida:</b> Barcelona-El Prat T1 · 10:05<br>
+          <b>Llegada:</b> París Charles de Gaulle T2F · 12:00<br>
+          <b>Duración:</b> 1h 55m<br>
+          <b>Hora límite facturación:</b> 09:25<br>
+          <b>Equipaje:</b> ningún equipaje facturado incluido
+        </p>
+      </div>
+
+      <div class="mini-card p-5 bg-pink-100">
+        <p class="chip bg-pink-300 text-black">Vuelta · AF1448</p>
+        <h3 class="text-2xl font-black mt-3">CDG → BCN</h3>
+        <p class="mt-3 text-sm text-stone-700">
+          <b>Fecha:</b> 06/05/26<br>
+          <b>Salida:</b> París Charles de Gaulle T2F · 20:55<br>
+          <b>Llegada:</b> Barcelona-El Prat T1 · 22:45<br>
+          <b>Duración:</b> 1h 50m<br>
+          <b>Hora límite facturación:</b> 20:15<br>
+          <b>Equipaje:</b> ningún equipaje facturado incluido
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-5 p-4 rounded-3xl bg-black text-white">
+      <p class="font-black uppercase text-xs tracking-widest text-white/60">Importante</p>
+      <p class="mt-2 text-sm">
+        Reconfirmar horarios con Air France antes de la salida. La documentación indica que los vuelos no incluyen maleta facturada.
+      </p>
+    </div>
+  </article>
+</section>
+
+<!-- HOTEL -->
+<section id="hotel" class="p-4 md:p-6">
+  <article class="card p-5 md:p-7">
+    <h2 class="text-3xl md:text-5xl font-black leading-none">Hotel</h2>
+    <p class="mt-2 text-stone-500 font-bold">B&B HOTEL près de Disneyland Paris</p>
+
+    <div class="grid md:grid-cols-3 gap-3 mt-5">
+      <div class="mini-card p-4 bg-orange-100">
+        <p class="font-black uppercase text-xs tracking-widest">Fechas</p>
+        <p class="mt-2 text-sm">Entrada 03/05/26<br>Salida 06/05/26<br>3 noches</p>
+      </div>
+      <div class="mini-card p-4">
+        <p class="font-black uppercase text-xs tracking-widest">Habitación</p>
+        <p class="mt-2 text-sm">FAMILY<br>2 adultos + 1 niña</p>
+      </div>
+      <div class="mini-card p-4">
+        <p class="font-black uppercase text-xs tracking-widest">Régimen</p>
+        <p class="mt-2 text-sm">Alojamiento y desayuno</p>
+      </div>
+    </div>
+
+    <div class="mt-5 text-sm text-stone-700 leading-relaxed">
+      <p><b>Dirección:</b> 60 Avenue de la Fosse des Pressoirs, Magny-le-Hongre, 77700, Seine-et-Marne, Francia.</p>
+      <p class="mt-2"><b>Teléfono:</b> FR 298337529</p>
+      <p><b>Email:</b> reservation-4570@hotelbb.com</p>
+      <p><b>Referencia proveedor:</b> 32364141</p>
+    </div>
+
+    <div class="mt-5 p-4 rounded-3xl bg-yellow-100 text-sm">
+      <b>Nota clave:</b> el bono de hotel debe entregarse a la llegada. El documento recomienda consultar horarios de parques en la app de Disneyland Paris antes de viajar porque pueden cambiar.
+    </div>
+
+    <iframe
+      class="mt-5 w-full h-64 md:h-80 rounded-3xl border-0"
+      loading="lazy"
+      src="https://www.google.com/maps?q=B%26B%20HOTEL%20pr%C3%A8s%20de%20Disneyland%20Paris%2060%20Avenue%20de%20la%20Fosse%20des%20Pressoirs%20Magny-le-Hongre&output=embed">
+    </iframe>
+  </article>
+</section>
+
+<!-- TRASLADOS -->
+<section id="traslados" class="p-4 md:p-6">
+  <article class="card p-5 md:p-7">
+    <h2 class="text-3xl md:text-5xl font-black leading-none">Traslados Magical Shuttle</h2>
+    <p class="mt-2 text-stone-500 font-bold">Traslado colectivo CDG ↔ Disney</p>
+
+    <div class="grid md:grid-cols-2 gap-4 mt-6">
+      <div class="mini-card p-5 bg-sky-100">
+        <p class="chip bg-sky-300 text-black">Llegada · 03/05</p>
+        <h3 class="text-2xl font-black mt-3">CDG → Disney</h3>
+        <p class="mt-3 text-sm text-stone-700">
+          Servicio contratado: TRASLADO DISNEY MAGICAL SHUTTLE APTO CDG - DISNEY.  
+          Dirigirse a las paradas de Magical Shuttle fuera de las terminales del aeropuerto.
+        </p>
+      </div>
+
+      <div class="mini-card p-5 bg-pink-100">
+        <p class="chip bg-pink-300 text-black">Regreso · 06/05</p>
+        <h3 class="text-2xl font-black mt-3">Disney → CDG</h3>
+        <p class="mt-3 text-sm text-stone-700">
+          Servicio contratado: TRASLADO DISNEY MAGICAL SHUTTLE DISNEY - APTO CDG.  
+          Esperar fuera, en la puerta del hotel, al autobús con destino CDG.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-3 mt-5">
+      <div class="mini-card p-4 bg-yellow-100">
+        <p class="font-black uppercase text-xs tracking-widest">Hora sugerida regreso</p>
+        <p class="mt-2 text-sm">Para vuelo 20:55, salir hacia CDG aprox. entre 16:55 y 17:25.</p>
+      </div>
+      <div class="mini-card p-4">
+        <p class="font-black uppercase text-xs tracking-widest">Tickets</p>
+        <p class="mt-2 text-sm">Los tickets del Magical Shuttle deben recibirse por agencia. No vale solo el bono de agencia.</p>
+      </div>
+      <div class="mini-card p-4">
+        <p class="font-black uppercase text-xs tracking-widest">Horarios</p>
+        <p class="mt-2 text-sm">Consultar www.magicalshuttle.fr antes del viaje.</p>
+      </div>
+    </div>
+
+    <div class="mt-5 p-4 rounded-3xl bg-black text-white text-sm">
+      <b>Ojo:</b> los Magical Shuttle no paran en CDG T2G ni T3. Desde esas terminales hay que coger lanzadera interna del aeropuerto hacia otra terminal con parada.
+    </div>
+  </article>
+</section>
+
+<!-- TICKETS -->
+<section id="tickets" class="p-4 md:p-6">
+  <article class="card p-5 md:p-7">
+    <h2 class="text-3xl md:text-5xl font-black leading-none">Billetes y tickets</h2>
+
+    <div class="grid md:grid-cols-2 gap-4 mt-6">
+      <div class="mini-card p-5 bg-purple-100">
+        <p class="chip bg-purple-300 text-black">Paquete Disney</p>
+        <h3 class="text-2xl font-black mt-3">Hotel asociado + entradas</h3>
+        <p class="mt-3 text-sm text-stone-700">
+          Producto: “Hoteles Asociados mismos días de entradas que noches de estancia”.  
+          En la reserva constan 3 noches, por lo que el paquete está asociado a días de entrada equivalentes a las noches contratadas.
+        </p>
+      </div>
+
+      <div class="mini-card p-5 bg-yellow-100">
+        <p class="chip bg-yellow-300 text-black">Seguro</p>
+        <h3 class="text-2xl font-black mt-3">Seguro Inclusión LEPLAN 52M005</h3>
+        <p class="mt-3 text-sm text-stone-700">
+          Vigencia indicada: 03/05/26 – 06/05/26.  
+          Incluye 2 adultos + 1 niña.
+        </p>
+      </div>
+    </div>
+
+    <h3 class="text-2xl font-black mt-7">Billetes electrónicos Air France</h3>
+    <div class="grid md:grid-cols-3 gap-3 mt-4 text-sm">
+      <div class="mini-card p-4">
+        <b>Rafael</b><br>
+        057 235 672 108 3
+      </div>
+      <div class="mini-card p-4">
+        <b>Encarnación</b><br>
+        057 235 672 108 2
+      </div>
+      <div class="mini-card p-4 bg-yellow-100">
+        <b>Alejandra</b><br>
+        057 235 672 108 4
+      </div>
+    </div>
+
+    <div class="mt-5 p-4 rounded-3xl bg-red-100 text-sm">
+      <b>Importante:</b> en el aeropuerto hay que presentar documento de identidad. El documento de billete electrónico confirma la emisión en sistemas Air France, pero no sustituye la tarjeta de embarque.
+    </div>
+  </article>
+</section>
+
+<!-- CONTACTOS -->
+<section id="contactos" class="p-4 md:p-6">
+  <article class="card p-5 md:p-7">
+    <h2 class="text-3xl md:text-5xl font-black leading-none">Contactos útiles</h2>
+
+    <div class="grid md:grid-cols-2 gap-4 mt-6 text-sm">
+      <div class="mini-card p-4 bg-lime-100">
+        <p class="font-black uppercase text-xs tracking-widest">Asistencia 24h en viaje</p>
+        <p class="mt-2">+34 911 743 614</p>
+      </div>
+
+      <div class="mini-card p-4 bg-pink-100">
+        <p class="font-black uppercase text-xs tracking-widest">Emergencias traslados</p>
+        <p class="mt-2">+34 971 928 593</p>
+      </div>
+
+      <div class="mini-card p-4">
+        <p class="font-black uppercase text-xs tracking-widest">Agencia Mundo Pleno</p>
+        <p class="mt-2">910 063 059<br>info@mundopleno.com</p>
+      </div>
+
+      <div class="mini-card p-4">
+        <p class="font-black uppercase text-xs tracking-widest">Air France España</p>
+        <p class="mt-2">+34 91 375 33 35</p>
+      </div>
+    </div>
+
+    <div class="mt-5 p-4 rounded-3xl bg-yellow-100 text-sm">
+      <b>Cambios en traslados:</b> el documento indica que no se pueden realizar cambios con menos de 4 días de antelación.
+    </div>
+  </article>
+</section>
+
+<!-- CANCELACION -->
+<section class="p-4 md:p-6">
+  <article class="card p-5 md:p-7">
+    <h2 class="text-3xl md:text-5xl font-black leading-none">Condiciones y avisos</h2>
+
+    <div class="mt-5 grid md:grid-cols-2 gap-3 text-sm">
+      <div class="mini-card p-4">
+        <b>Cancelación desde 23/04/26 hasta 25/04/26</b><br>
+        663,05 €
+      </div>
+      <div class="mini-card p-4">
+        <b>Desde 26/04/26 hasta 28/04/26</b><br>
+        1.571,56 €
+      </div>
+      <div class="mini-card p-4">
+        <b>Desde 29/04/26 hasta 30/04/26</b><br>
+        1.689,56 €
+      </div>
+      <div class="mini-card p-4 bg-red-100">
+        <b>Desde 01/05/26 hasta 03/05/26</b><br>
+        1.977,40 €
+      </div>
+    </div>
+
+    <div class="mt-5 p-4 rounded-3xl bg-black text-white text-sm">
+      <b>Recordatorio práctico:</b> llevar a mano documentación personal, localizadores, tickets Magical Shuttle, bono hotel y billetes Air France.
+    </div>
+  </article>
+</section>
+
+</main>
+</body>
+</html>
