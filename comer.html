@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Guía local · Coupvray, Brie y Val d’Europe</title>
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body {
+    background: #f2eadf;
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #171717;
+  }
+  .app {
+    max-width: 980px;
+    margin: auto;
+    background: #f8f3ea;
+    min-height: 100vh;
+  }
+  .card {
+    border-radius: 30px;
+    background: #fffaf2;
+    box-shadow: 0 14px 34px rgba(0,0,0,.08);
+    border: 1px solid rgba(0,0,0,.06);
+    overflow: hidden;
+  }
+  .mini-card {
+    border-radius: 22px;
+    background: rgba(255,255,255,.72);
+    border: 1px solid rgba(0,0,0,.06);
+  }
+  .chip {
+    border-radius: 999px;
+    padding: 6px 10px;
+    font-size: 11px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+    white-space: nowrap;
+  }
+  .slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+  }
+  .slider::-webkit-scrollbar { display: none; }
+  .slide {
+    min-width: 100%;
+    height: 240px;
+    object-fit: cover;
+    scroll-snap-align: start;
+    cursor: pointer;
+  }
+  @media (min-width: 768px) {
+    .slide { height: 340px; }
+  }
+  .modal { display: none; }
+  .modal.active { display: flex; }
+</style>
+</head>
+
+<body>
+<main class="app pb-24">
+
+<!-- HERO -->
+<section class="relative h-[500px] md:h-[620px] overflow-hidden rounded-b-[44px]">
+  <img
+    src="https://images.openai.com/static-rsc-4/BFyZvoV2JWEYE17d_-d-z2knZKvSiwutnSL23JVWQilO9p6-xrbKeYB0jsc6zBpnn6EKiDIWxtwPwCkdPdJT8qCavje3Vt0NqhPJ96cV2SSyHS-5X74FLYM0bQ_JPq_RdDf2YoafmB04BM_zW2VaeqSfaAlWn97UPS_jEbLdFDBW9jlPJzdOl9F4mlwqKEYv?purpose=fullsize"
+    class="absolute inset-0 w-full h-full object-cover"
+    alt="Paisaje rural de Brie cerca de Coupvray"
+  />
+  <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10"></div>
+
+  <div class="absolute top-5 left-5 right-5 flex justify-between gap-3">
+    <div class="bg-white/90 rounded-3xl px-4 py-3 shadow">
+      <p class="text-[11px] uppercase font-black tracking-widest text-stone-500">Base</p>
+      <p class="font-black">B&B HOTEL · Coupvray</p>
+    </div>
+    <div class="bg-black/70 text-white rounded-3xl px-4 py-3 text-right">
+      <p class="text-[11px] uppercase font-black tracking-widest text-white/70">Proyecto</p>
+      <p class="font-black">Disney 2026</p>
+    </div>
+  </div>
+
+  <div class="absolute bottom-8 left-5 right-5 text-white">
+    <span class="chip bg-orange-300 text-black inline-block mb-4">Contexto local + comida real</span>
+    <h1 class="text-5xl md:text-7xl font-black leading-[.9] tracking-tight">
+      La otra mitad invisible de Disney
+    </h1>
+    <p class="mt-4 text-white/85 text-lg md:text-2xl max-w-2xl">
+      Una guía para entender Coupvray, Brie y Val d’Europe: dónde comer sin arruinarse, qué mirar fuera del parque y cómo aterrizar mentalmente en el lugar real.
+    </p>
+  </div>
+</section>
+
+<!-- STICKY NAV -->
+<section class="sticky top-0 z-30 bg-[#f8f3ea]/90 backdrop-blur px-4 md:px-6 py-3 border-b border-black/5">
+  <div class="slider gap-2">
+    <a href="#mental" class="chip bg-orange-300 text-black">Mapa mental</a>
+    <a href="#food" class="chip bg-lime-300 text-black">Comer barato</a>
+    <a href="#places" class="chip bg-sky-300 text-black">Lugares</a>
+    <a href="#brie" class="chip bg-yellow-300 text-black">Brie</a>
+    <a href="#braille" class="chip bg-pink-300 text-black">Braille</a>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="p-4 md:p-6 grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+  <div class="card p-4 md:p-6 bg-black text-white">
+    <p class="text-4xl font-black">3</p>
+    <p class="text-sm font-bold mt-1">capas del lugar</p>
+  </div>
+  <div class="card p-4 md:p-6">
+    <p class="text-4xl font-black">5–30</p>
+    <p class="text-sm font-bold mt-1">min en taxi</p>
+  </div>
+  <div class="card p-4 md:p-6 bg-yellow-100">
+    <p class="text-4xl font-black">5–10€</p>
+    <p class="text-sm font-bold mt-1">comida súper</p>
+  </div>
+  <div class="card p-4 md:p-6 bg-lime-100">
+    <p class="text-4xl font-black">1</p>
+    <p class="text-sm font-bold mt-1">historia humana enorme</p>
+  </div>
+</section>
+
+<!-- QUICK DECISION -->
+<section class="px-4 md:px-6 pb-6">
+  <div class="card p-5 md:p-6 bg-[#171717] text-white">
+    <p class="chip bg-lime-300 text-black inline-block">Decisión rápida</p>
+    <div class="grid md:grid-cols-4 gap-3 mt-4 text-sm">
+      <div class="mini-card bg-white/10 p-4"><b>¿Queréis ahorrar?</b><br />Auchan Val d’Europe</div>
+      <div class="mini-card bg-white/10 p-4"><b>¿Queréis comer real?</b><br />Le Comptoir / brasserie</div>
+      <div class="mini-card bg-white/10 p-4"><b>¿Queréis cultura?</b><br />Maison Louis Braille</div>
+      <div class="mini-card bg-white/10 p-4"><b>¿Queréis autenticidad?</b><br />Brie + baguette</div>
+    </div>
+  </div>
+</section>
+
+<!-- MAPA MENTAL -->
+<section id="mental" class="p-4 md:p-6 scroll-mt-24">
+  <div class="card p-5 md:p-6">
+    <span class="chip bg-orange-300 text-black inline-block mb-4">Dónde estás realmente</span>
+    <h2 class="text-4xl md:text-6xl font-black leading-none tracking-tight">Coupvray no es solo “cerca de Disney”.</h2>
+    <p class="mt-4 text-stone-700 leading-relaxed">
+      Estás en un punto raro donde se superponen tres mundos: Disneyland Paris como emoción diseñada, Val d’Europe como ciudad planificada y la región rural de Brie como Francia cotidiana, silenciosa y antigua.
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-3 mt-5">
+      <div class="mini-card p-4 bg-pink-100">
+        <p class="text-3xl">🎭</p>
+        <h3 class="font-black mt-2">Disney</h3>
+        <p class="text-sm text-stone-700 mt-1">Narrativa, estímulo, música, control emocional.</p>
+      </div>
+      <div class="mini-card p-4 bg-sky-100">
+        <p class="text-3xl">🏙️</p>
+        <h3 class="font-black mt-2">Val d’Europe</h3>
+        <p class="text-sm text-stone-700 mt-1">Orden, urbanismo nuevo, París idealizado.</p>
+      </div>
+      <div class="mini-card p-4 bg-lime-100">
+        <p class="text-3xl">🌾</p>
+        <h3 class="font-black mt-2">Brie rural</h3>
+        <p class="text-sm text-stone-700 mt-1">Campos, queso, pan, pueblos y vida real.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOD STRATEGY -->
+<section id="food" class="p-4 md:p-6 scroll-mt-24">
+  <div class="card p-5 md:p-6 bg-yellow-100">
+    <span class="chip bg-black text-white inline-block mb-4">Estrategia de comida</span>
+    <h2 class="text-4xl md:text-6xl font-black leading-none tracking-tight">Dentro pagas la historia. Fuera pagas la comida.</h2>
+    <p class="mt-4 text-stone-700 leading-relaxed">
+      La forma inteligente de vivir el viaje sin ansiedad económica es alternar: supermercado + panadería + restaurantes locales de ticket bajo. Regla dura de esta guía: <b>máximo 20€ por persona, ideal por debajo de 15€</b>. Lo que se salga de eso queda marcado como “solo si compensa” o directamente descartado.
+    </p>
+
+    <div class="grid md:grid-cols-2 gap-3 mt-5">
+      <div class="mini-card p-4 bg-white">
+        <p class="font-black uppercase text-xs tracking-widest">Fuera de Disney</p>
+        <ul class="mt-2 text-sm text-stone-700 space-y-1">
+          <li>• Formule midi: 12–18€ en sitios sencillos</li>
+          <li>• Plato normal: 10–18€</li>
+          <li>• Supermercado: 5–10€ por persona</li>
+        </ul>
+      </div>
+      <div class="mini-card p-4 bg-red-100">
+        <p class="font-black uppercase text-xs tracking-widest">Dentro de Disney</p>
+        <ul class="mt-2 text-sm text-stone-700 space-y-1">
+          <li>• Quick service: 15–25€ por persona</li>
+          <li>• Restaurante sentado: 25–50€+</li>
+          <li>• Snacks y bebidas suman muy rápido</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUDGET FILTER -->
+<section class="p-4 md:p-6">
+  <div class="card p-5 md:p-6 bg-lime-100">
+    <span class="chip bg-black text-white inline-block mb-4">Filtro económico real</span>
+    <h2 class="text-4xl md:text-6xl font-black leading-none tracking-tight">Solo entra lo que puede funcionar por menos de 20€.</h2>
+    <div class="grid md:grid-cols-3 gap-3 mt-5 text-sm">
+      <div class="mini-card p-4 bg-green-100"><b class="uppercase tracking-widest text-xs">Sí</b><br />Panaderías, crêpes simples, couscous/plato único, comida preparada, brasserie barata.</div>
+      <div class="mini-card p-4 bg-yellow-100"><b class="uppercase tracking-widest text-xs">Con cuidado</b><br />Burgers “buenos”, crêperies con bebida/postre, restaurantes de Val d’Europe.</div>
+      <div class="mini-card p-4 bg-red-100"><b class="uppercase tracking-widest text-xs">Descartar</b><br />Buffets Disney hotel, restaurantes gastronómicos, menús de 30€+, cartas sin formule midi.</div>
+    </div>
+  </div>
+</section>
+
+<!-- SUPERMERCADOS -->
+<section class="p-4 md:p-6">
+  <div class="card p-5 md:p-6">
+    <span class="chip bg-lime-300 text-black inline-block mb-4">Supermercados clave</span>
+    <h2 class="text-4xl md:text-6xl font-black leading-none tracking-tight">Infraestructura invisible del viaje</h2>
+    <p class="mt-4 text-stone-700 leading-relaxed">
+      Aquí no se trata solo de ahorrar. Se trata de tener control. Estos puntos te permiten evitar decisiones caras dentro de Disney y mantener el viaje sostenible sin fricción.
+    </p>
+  </div>
+</section>
+
+<section class="p-4 md:p-6 grid md:grid-cols-3 gap-4">
+
+  <div class="card p-5 md:p-6">
+    <p class="chip bg-lime-300 text-black mb-3 inline-block">Base total</p>
+    <h3 class="text-2xl font-black">Auchan Val d’Europe</h3>
+    <p class="text-sm text-stone-500 mt-1">El centro de operaciones</p>
+
+    <div class="mt-4 text-sm space-y-1">
+      <p><b>📍</b> 14 Cours du Danube, Serris</p>
+      <p><b>🚗</b> 8–12 min</p>
+      <p><b>🚕</b> 12–18€</p>
+      <p><b>💰</b> 5–10€ por comida</p>
+    </div>
+
+    <div class="mt-4 text-sm text-stone-700">
+      Compra base: agua, fruta, ensaladas, pasta, pollo, snacks, yogures, <b>Brie + baguette</b>.
+    </div>
+
+    <a href="https://www.google.com/maps/search/Auchan+Val+d'Europe" target="_blank" class="text-blue-600 text-sm underline mt-3 inline-block">Abrir en Google Maps</a>
+  </div>
+
+  <div class="card p-5 md:p-6">
+    <p class="chip bg-yellow-300 text-black mb-3 inline-block">Alternativa rápida</p>
+    <h3 class="text-2xl font-black">Carrefour Market Chessy</h3>
+    <p class="text-sm text-stone-500 mt-1">Menos caos, más rápido</p>
+
+    <div class="mt-4 text-sm space-y-1">
+      <p><b>📍</b> Chessy</p>
+      <p><b>🚗</b> 5–8 min</p>
+      <p><b>🚕</b> 8–12€</p>
+      <p><b>💰</b> 6–12€</p>
+    </div>
+
+    <div class="mt-4 text-sm text-stone-700">
+      Ideal si no quieres perder tiempo en Auchan. Compra rápida y funcional.
+    </div>
+
+    <a href="https://www.google.com/maps/search/Carrefour+Market+Chessy" target="_blank" class="text-blue-600 text-sm underline mt-3 inline-block">Abrir en Google Maps</a>
+  </div>
+
+  <div class="card p-5 md:p-6">
+    <p class="chip bg-sky-300 text-black mb-3 inline-block">Emergencia</p>
+    <h3 class="text-2xl font-black">Franprix Coupvray</h3>
+    <p class="text-sm text-stone-500 mt-1">Solución cercana</p>
+
+    <div class="mt-4 text-sm space-y-1">
+      <p><b>📍</b> Coupvray</p>
+      <p><b>🚶</b> 10–20 min</p>
+      <p><b>💰</b> 6–12€</p>
+    </div>
+
+    <div class="mt-4 text-sm text-stone-700">
+      Para noches cansados o compras mínimas sin desplazarte.
+    </div>
+
+    <a href="https://www.google.com/maps/search/Franprix+Coupvray" target="_blank" class="text-blue-600 text-sm underline mt-3 inline-block">Abrir en Google Maps</a>
+  </div>
+
+</section>
+
+<section id="places" class="p-4 md:p-6 space-y-8 scroll-mt-24"></section>
+
+<!-- BRIE -->
+<section id="brie" class="p-4 md:p-6 scroll-mt-24">
+  <div class="card">
+    <div class="relative">
+      <button onclick="slideGallery(this,-1)" class="absolute left-3 top-1/2 -translate-y-1/2 z-10 bg-white/90 rounded-full w-11 h-11 text-3xl font-black shadow">‹</button>
+      <div class="slider">
+        <img onclick="openModal(this)" class="slide" src="https://images.openai.com/static-rsc-4/FA5DNh05cfaBe7UyNngD8ji3TeuWG0H_7sbuDxLbDIkX9Srfeuolf3HJN3msb1k4eXfS1vohJuh0JzbBjG1db_yWD8nMwOF6IJP5CmEIUGEDk0K2NxcOzwvHEy7BcdOkH7YN-IIOyzPxhkl0DrJtRMBCh9lfoQ2b44Zxn4L9FlbK_7pJe19jG_8IUEZHMD4y?purpose=fullsize" alt="Brie de Meaux" />
+        <img onclick="openModal(this)" class="slide" src="https://images.openai.com/static-rsc-4/Y9fzxXyPx4lIiqDhm_rVUHoGEMEU5PIgnmJsiiRy-rDzcV7JNDoaSlT2d83nd2UbwPOF0HD-zb1cwb_myrrWlxBIruFVRAffaNzMpdJMm9pgnB3tzVM_NWHRBGgcin6qJCTSD305EdeHuE9halburgV9uydVyg1VNia8hr4F9tCITJfL1qoUvXtQfHbd9ULD?purpose=fullsize" alt="Quesos Brie" />
+        <img onclick="openModal(this)" class="slide" src="https://images.openai.com/static-rsc-4/4HTQelh5qcidoPcMFthIPbNgQvXncsuii5oD8YweselDXTdIFZCviCaVlEqFr_hBYuV_8X3dc8kbHveKTHMPUcCpLY4Pt5kmTT_xvWdFxXFXptqyHYHdZTTeknVL0h1ooLW2x_xTMeD4mgzY_9FHXzy2V7xvIaATiC4ZxF4lcMd25qnJufV4XWqXmJETvrDo?purpose=fullsize" alt="Pan francés" />
+      </div>
+      <button onclick="slideGallery(this,1)" class="absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-white/90 rounded-full w-11 h-11 text-3xl font-black shadow">›</button>
+      <div class="absolute top-4 left-4 chip bg-yellow-300 text-black">Brie · producto central</div>
+      <div class="absolute bottom-3 right-3 chip bg-black/70 text-white">Desliza · 3</div>
+    </div>
+
+    <div class="p-5 md:p-6">
+      <h2 class="text-4xl md:text-6xl font-black leading-none tracking-tight">La región se entiende con pan y queso.</h2>
+      <p class="mt-4 text-stone-700 leading-relaxed">
+        Coupvray está en el mundo histórico de Brie. No busques un restaurante temático: el queso aquí no se convierte en espectáculo. Aparece al final de una comida, en una tienda, en una mesa sencilla, con pan.
+      </p>
+      <div class="grid md:grid-cols-3 gap-3 mt-5">
+        <div class="mini-card p-4 bg-yellow-100"><b>Brie de Meaux</b><br /><span class="text-sm text-stone-700">El más icónico para probar.</span></div>
+        <div class="mini-card p-4 bg-yellow-100"><b>Brie de Melun</b><br /><span class="text-sm text-stone-700">Más intenso, más local.</span></div>
+        <div class="mini-card p-4 bg-lime-100"><b>Plan perfecto</b><br /><span class="text-sm text-stone-700">Brie + baguette + fruta + banco tranquilo.</span></div>
+      </div>
+      <div class="mt-5 p-4 rounded-3xl bg-black text-white">
+        <p class="font-black uppercase text-xs tracking-widest text-white/60">Decisión de un vistazo</p>
+        <p class="mt-2 text-lg font-black">Más auténtico que un restaurante caro: comprar Brie bueno y comerlo sin convertirlo en evento.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BRAILLE STORY -->
+<section id="braille" class="p-4 md:p-6 scroll-mt-24">
+  <div class="card p-5 md:p-6 bg-sky-100">
+    <span class="chip bg-sky-300 text-black inline-block mb-4">Louis Braille · Coupvray</span>
+    <h2 class="text-4xl md:text-6xl font-black leading-none tracking-tight">El niño que inventó una forma de leer sin ver.</h2>
+    <div class="mt-5 space-y-3 text-stone-700 leading-relaxed">
+      <p>Louis Braille nació en Coupvray en 1809. De pequeño se hirió con una lezna en el taller de su padre, que trabajaba cuero para caballos. La infección se extendió y perdió completamente la vista.</p>
+      <p>Más tarde convirtió una idea militar de “escritura nocturna” en un sistema táctil de seis puntos que permitió leer, escribir, estudiar música y pensar con autonomía.</p>
+      <p class="font-black text-black">Disney está construido para ser visto. Braille creó un mundo que podía ser leído sin verlo. Tener ambas cosas a minutos de distancia es brutal.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<section class="px-4 md:px-6 pb-10">
+  <div class="card p-5 md:p-6 bg-[#171717] text-white text-center">
+    <p class="chip bg-orange-300 text-black inline-block mb-4">Idea final</p>
+    <h2 class="text-4xl md:text-6xl font-black leading-none tracking-tight">No hace falta salir lejos para salir del decorado.</h2>
+    <p class="mt-4 text-white/75 max-w-2xl mx-auto">
+      A veces basta con pan, Brie, una calle tranquila de Coupvray y recordar que justo al lado del parque más visual de Europa nació alguien que cambió el mundo sin necesitar verlo.
+    </p>
+  </div>
+</section>
+
+</main>
+
+<!-- MODAL -->
+<div id="modal" class="modal fixed inset-0 bg-black/90 items-center justify-center z-50 p-4" onclick="closeModal()">
+  <button onclick="event.stopPropagation(); closeModal()" class="absolute top-5 right-5 text-white text-5xl z-20 leading-none">&times;</button>
+  <button onclick="event.stopPropagation(); navigateModal(-1)" class="absolute left-3 md:left-8 top-1/2 -translate-y-1/2 z-20 bg-white/90 rounded-full w-12 h-12 md:w-14 md:h-14 text-4xl font-black">‹</button>
+  <img id="modalImg" class="max-w-full max-h-[88vh] rounded-3xl object-contain" onclick="event.stopPropagation()" alt="Imagen ampliada de la galería" />
+  <button onclick="event.stopPropagation(); navigateModal(1)" class="absolute right-3 md:right-8 top-1/2 -translate-y-1/2 z-20 bg-white/90 rounded-full w-12 h-12 md:w-14 md:h-14 text-4xl font-black">›</button>
+  <div id="modalCounter" class="absolute bottom-5 left-1/2 -translate-x-1/2 bg-white/90 text-black px-4 py-2 rounded-full text-sm font-bold" onclick="event.stopPropagation()"></div>
+</div>
+
+<script>
+let currentGallery = [];
+let currentIndex = 0;
+
+function slideGallery(button, direction) {
+  const slider = button.parentElement.querySelector(".slider");
+  slider.scrollBy({ left: slider.clientWidth * direction, behavior: "smooth" });
+}
+
+function openModal(img) {
+  const slider = img.closest(".slider");
+  currentGallery = Array.from(slider.querySelectorAll("img")).map(i => i.src);
+  currentIndex = currentGallery.indexOf(img.src);
+  updateModal();
+  document.getElementById("modal").classList.add("active");
+  document.body.style.overflow = "hidden";
+}
+
+function updateModal() {
+  document.getElementById("modalImg").src = currentGallery[currentIndex];
+  document.getElementById("modalCounter").textContent = (currentIndex + 1) + " / " + currentGallery.length;
+}
+
+function navigateModal(direction) {
+  currentIndex += direction;
+  if (currentIndex < 0) currentIndex = currentGallery.length - 1;
+  if (currentIndex >= currentGallery.length) currentIndex = 0;
+  updateModal();
+}
+
+function closeModal() {
+  document.getElementById("modal").classList.remove("active");
+  document.body.style.overflow = "";
+}
+
+document.addEventListener("keydown", function(e) {
+  if (e.key === "Escape") closeModal();
+  if (document.getElementById("modal").classList.contains("active")) {
+    if (e.key === "ArrowLeft") navigateModal(-1);
+    if (e.key === "ArrowRight") navigateModal(1);
+  }
+});
+
+function place(data) {
+  return `
+  <article id="${data.id}" class="card scroll-mt-24">
+
+    <div class="relative">
+      <button onclick="slideGallery(this,-1)"
+        class="absolute left-3 top-1/2 -translate-y-1/2 z-10 bg-white/90 rounded-full w-11 h-11 text-3xl font-black shadow">‹</button>
+
+      <div class="slider">
+        ${data.images.map(src => `<img onclick="openModal(this)" class="slide" src="${src}" alt="${data.title}">`).join("")}
+      </div>
+
+      <button onclick="slideGallery(this,1)"
+        class="absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-white/90 rounded-full w-11 h-11 text-3xl font-black shadow">›</button>
+
+      <div class="absolute top-4 left-4 chip ${data.color} text-black">${data.number} · ${data.label}</div>
+      <div class="absolute bottom-3 right-3 chip bg-black/70 text-white">Desliza / usa flechas · ${data.images.length}</div>
+    </div>
+
+    <div class="p-4 md:p-6">
+      <h2 class="text-3xl md:text-5xl font-black leading-none">${data.title}</h2>
+      <p class="mt-2 text-stone-500 font-bold">${data.subtitle}</p>
+
+      <div class="grid grid-cols-3 gap-2 md:gap-3 mt-4">
+        <div class="rounded-2xl ${data.softColor} p-3 md:p-4">
+          <p class="text-[11px] font-black uppercase">Desde hotel</p>
+          <p class="font-black md:text-xl">${data.distance}</p>
+        </div>
+        <div class="rounded-2xl bg-stone-100 p-3 md:p-4">
+          <p class="text-[11px] font-black uppercase">Precio</p>
+          <p class="font-black md:text-xl">${data.price}</p>
+        </div>
+        <div class="rounded-2xl bg-stone-100 p-3 md:p-4">
+          <p class="text-[11px] font-black uppercase">Úsalo si</p>
+          <p class="font-black md:text-xl">${data.whenShort}</p>
+        </div>
+      </div>
+
+      <div class="mt-5 space-y-3 text-stone-700 leading-relaxed">
+        <p>${data.insight1}</p>
+        <p class="text-sm md:text-base text-stone-600">${data.insight2}</p>
+        <p class="text-sm md:text-base text-stone-600">${data.insight3}</p>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-3 mt-5">
+        <div class="mini-card p-4 ${data.softColor}">
+          <p class="font-black uppercase text-xs tracking-widest">Dirección</p>
+          <p class="mt-2 text-sm text-stone-700">${data.address}</p>
+        </div>
+        <div class="mini-card p-4 ${data.softColor}">
+          <p class="font-black uppercase text-xs tracking-widest">Coste taxi/Uber</p>
+          <p class="mt-2 text-sm text-stone-700">${data.taxi}</p>
+        </div>
+        <div class="mini-card p-4 bg-white">
+          <p class="font-black uppercase text-xs tracking-widest">Consejo práctico</p>
+          <p class="mt-2 text-sm text-stone-700">${data.tip}</p>
+        </div>
+        <div class="mini-card p-4 bg-white">
+          <p class="font-black uppercase text-xs tracking-widest">Evítalo si</p>
+          <p class="mt-2 text-sm text-stone-700">${data.avoid}</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3 mt-5 text-sm">
+        <div class="bg-green-100 p-4 rounded-3xl">
+          <b class="uppercase tracking-widest text-xs">Pros</b>
+          <ul class="mt-2 space-y-1">${data.pros.map(p => `<li>• ${p}</li>`).join("")}</ul>
+        </div>
+        <div class="bg-red-100 p-4 rounded-3xl">
+          <b class="uppercase tracking-widest text-xs">Contras</b>
+          <ul class="mt-2 space-y-1">${data.cons.map(c => `<li>• ${c}</li>`).join("")}</ul>
+        </div>
+      </div>
+
+      <div class="mt-5 p-4 rounded-3xl bg-black text-white">
+        <p class="font-black uppercase text-xs tracking-widest text-white/60">Decisión de un vistazo</p>
+        <p class="mt-2 text-lg font-black">${data.decision}</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-3 mt-5">
+        <a target="_blank" href="${data.maps}" class="block text-center rounded-3xl bg-blue-600 text-white font-black py-4">Abrir en Google Maps</a>
+        <a target="_blank" href="${data.search}" class="block text-center rounded-3xl bg-stone-200 text-black font-black py-4">Buscar info actual</a>
+      </div>
+
+      <iframe class="mt-5 w-full h-60 md:h-72 rounded-3xl border-0" loading="lazy" src="${data.map}"></iframe>
+    </div>
+  </article>`;
+}
+
+const places = [
+  {
+    id: "boulangerieduval",
+    number: "01",
+    label: "Panadería top",
+    color: "bg-yellow-300",
+    softColor: "bg-yellow-100",
+    title: "La Boulangerie du Val",
+    subtitle: "Panadería/pastelería real junto al RER Val d’Europe. Perfecta para desayuno, merienda o comida barata para llevar.",
+    address: "18 Place d’Ariane, 77700 Chessy / Serris-Val d’Europe",
+    distance: "45–55 min andando · 8–12 min coche",
+    price: "3–12€",
+    whenShort: "Desayuno",
+    taxi: "12–18€ aprox. desde B&B HOTEL; conviene combinar con Auchan/Val d’Europe.",
+    images: [
+      "https://images.openai.com/static-rsc-4/4HTQelh5qcidoPcMFthIPbNgQvXncsuii5oD8YweselDXTdIFZCviCaVlEqFr_hBYuV_8X3dc8kbHveKTHMPUcCpLY4Pt5kmTT_xvWdFxXFXptqyHYHdZTTeknVL0h1ooLW2x_xTMeD4mgzY_9FHXzy2V7xvIaATiC4ZxF4lcMd25qnJufV4XWqXmJETvrDo?purpose=fullsize",
+      "https://images.openai.com/static-rsc-4/qj_O42pAz6dpkeDzK71uw0R6yARHTLhJwKWbCxQjQ5c3toOECVebUZnxp8xMuvyLswryNVUoiiBlYt2KkDHgZ3vXv5P3OldxPDkG7O3SU17ttCW6hX9peEyqKNkYhAnSfUEowKfq55Riytjd5Zff7DHG44CTfZbTkTwvAkXHnUsuFhwY6nQPjtzJ3_U5La-m?purpose=fullsize"
+    ],
+    insight1: "Una buena boulangerie es probablemente la experiencia francesa más barata y más real que podéis tener durante el viaje.",
+    insight2: "Baguette, croissant, pain au chocolat, quiche o bocadillo resuelven desayunos, meriendas y snacks de parque sin pagar precios Disney.",
+    insight3: "Por qué importa: es local, práctico y emocionalmente francés sin convertirse en plan turístico.",
+    tip: "Ir por la mañana o al pasar por Val d’Europe. Comprar extra para llevar al hotel o al parque.",
+    avoid: "Si el desvío solo es para esto. Mejor combinar con RER, Auchan o centro comercial.",
+    pros: ["Muy barata", "Auténtica", "Ideal para llevar", "Perfecta con niña"],
+    cons: ["No está pegada al hotel", "No sustituye una cena completa", "Puede haber cola"],
+    decision: "La mejor opción para comer francés real por muy poco dinero.",
+    maps: "https://www.google.com/maps/search/?api=1&query=La+Boulangerie+du+Val+18+Place+d%27Ariane+77700+Chessy",
+    search: "https://www.google.com/search?q=La+Boulangerie+du+Val+18+Place+d%27Ariane+horaires",
+    map: "https://www.google.com/maps?f=d&saddr=B%26B+HOTEL+près+de+Disneyland+Paris,+Coupvray&daddr=La+Boulangerie+du+Val,+18+Place+d%27Ariane,+77700+Chessy&output=embed"
+  },
+  {
+    id: "auchan",
+    number: "02",
+    label: "Ahorro clave",
+    color: "bg-lime-300",
+    softColor: "bg-lime-100",
+    title: "Auchan Val d’Europe",
+    subtitle: "El recurso más útil para comer bien y controlar gasto durante los días Disney.",
+    address: "Centre Commercial Val d’Europe, 14 Cours du Danube, 77700 Serris",
+    distance: "50–60 min andando · 8–12 min coche",
+    price: "5–10€/persona",
+    whenShort: "Ahorrar",
+    taxi: "12–18€ aprox. desde B&B HOTEL; compensa si compras para 2–3 comidas/snacks.",
+    images: [
+      "https://images.openai.com/static-rsc-4/4HTQelh5qcidoPcMFthIPbNgQvXncsuii5oD8YweselDXTdIFZCviCaVlEqFr_hBYuV_8X3dc8kbHveKTHMPUcCpLY4Pt5kmTT_xvWdFxXFXptqyHYHdZTTeknVL0h1ooLW2x_xTMeD4mgzY_9FHXzy2V7xvIaATiC4ZxF4lcMd25qnJufV4XWqXmJETvrDo?purpose=fullsize",
+      "https://images.openai.com/static-rsc-4/FA5DNh05cfaBe7UyNngD8ji3TeuWG0H_7sbuDxLbDIkX9Srfeuolf3HJN3msb1k4eXfS1vohJuh0JzbBjG1db_yWD8nMwOF6IJP5CmEIUGEDk0K2NxcOzwvHEy7BcdOkH7YN-IIOyzPxhkl0DrJtRMBCh9lfoQ2b44Zxn4L9FlbK_7pJe19jG_8IUEZHMD4y?purpose=fullsize",
+      "https://images.openai.com/static-rsc-4/5xvqE7pALWr183Z7WUHXksWScAgVQBHmn2MZRy8bAtGMFsIBlzSze_SgFW5zlmFVNTBpijg-SiDUO0bF8D_n9PcYf8fHZw4EIKxu9sI7v_KaaWPt-HN70sRy9g9vgc69RbJ9vqif9iOnGYVuTKBaZg-6d7pSiGPEr_0uKZGtPx5-4gEg3gs1G9YrpKyBNYPn?purpose=fullsize"
+    ],
+    insight1: "Auchan no es romántico: es la herramienta que evita que el viaje se descontrole económicamente.",
+    insight2: "Comida preparada, ensaladas, pasta, pollo, agua, fruta, yogures, snacks, pan y queso pueden cubrir desayunos, cenas de hotel y parque.",
+    insight3: "Por qué importa: no quita magia. Protege la magia, porque evita que cada hambre sea una compra cara dentro del parque.",
+    tip: "Compra la primera tarde: agua, fruta, algo salado, algo dulce, Brie, baguette y una cena simple.",
+    avoid: "Si estáis demasiado cansados. En ese caso, comprad mínimo y salid rápido.",
+    pros: ["Máximo ahorro", "Comida preparada", "Ideal para snacks", "Sirve para varios días"],
+    cons: ["No tiene encanto", "Puede cansar", "Requiere desplazamiento"],
+    decision: "Base logística alimentaria del viaje.",
+    maps: "https://www.google.com/maps/search/?api=1&query=Auchan+Val+d%27Europe+14+Cours+du+Danube+77700+Serris",
+    search: "https://www.google.com/search?q=Auchan+Val+d%27Europe+horaires",
+    map: "https://www.google.com/maps?f=d&saddr=B%26B+HOTEL+près+de+Disneyland+Paris,+Coupvray&daddr=Auchan+Val+d%27Europe,+14+Cours+du+Danube,+77700+Serris&output=embed"
+  },
+  {
+    id: "lecodebar",
+    number: "03",
+    label: "Brasserie local",
+    color: "bg-orange-300",
+    softColor: "bg-orange-100",
+    title: "Le Code Bar",
+    subtitle: "Bar-brasserie de Magny-le-Hongre: uno de los mejores candidatos para comer local, sencillo y dentro de presupuesto.",
+    address: "3 Rue des Labours, 77700 Magny-le-Hongre",
+    distance: "35–45 min andando · 6–9 min coche",
+    price: "8–18€ si eliges simple",
+    whenShort: "Comer local",
+    taxi: "9–15€ aprox. desde B&B HOTEL.",
+    images: [
+      "https://images.openai.com/static-rsc-4/bLhG0ArjvRLVDLt9_kF2ggK2JdNMXujO4E2JaQzOzJzKwpsHPSji125fRPOw7x9q9GrRxCEOOvWjmpft0LzeVX9jelawkYgSJU32xlKSacPKZCvbM9Hqs6YH0cmldDlUQMOfx_Ln4LxmVgVsgVaG9WiH6jqHY6HNjhN5NhQLyQ-nZSUek4CpCsYqob2XH54j?purpose=fullsize",
+      "https://images.openai.com/static-rsc-4/yKl90-MLsQEKUJ3orHNW4RLCfKEFMp0duaBZaJZaNiGhvvdgCbWVowoJNxXyL1yAV7ThToS8dstyW43Ta9OOr8URnqPx6MYvkaKB2gYgTa2Dh4zAO1uEdM4g02FpNRSPxN86TijWlY9xhCvTgdDiTeaB6h5_49iRH5-C4ASfYHyfyJ7Lry9KpY28UAZtkbeh?purpose=fullsize"
+    ],
+    insight1: "Este es el tipo de sitio que buscabas: no una experiencia turística, sino un bar-brasserie de uso local.",
+    insight2: "La carta tiene entradas simples y snacking/brasserie; si no añadís demasiada bebida/postre, puede mantenerse por debajo de 20€.",
+    insight3: "Por qué importa: tiene más vida local que las opciones de centro comercial y más sentido económico que Disney.",
+    tip: "Ir a mediodía. Preguntar si hay plat du jour o opción simple. Evitar convertirlo en cena larga con extras.",
+    avoid: "Si está cerrado, muy lleno o si el taxi ida/vuelta anula el ahorro.",
+    pros: ["Local", "Precios controlables", "Brasserie real", "Cerca en taxi"],
+    cons: ["No pegado al hotel", "Horarios a confirmar", "Con extras sube"],
+    decision: "Probablemente la mejor opción local sentada bajo 20€ si encaja horario.",
+    maps: "https://www.google.com/maps/search/?api=1&query=Le+Code+Bar+3+Rue+des+Labours+77700+Magny-le-Hongre",
+    search: "https://www.google.com/search?q=Le+Code+Bar+Magny-le-Hongre+menu+prix",
+    map: "https://www.google.com/maps?f=d&saddr=B%26B+HOTEL+près+de+Disneyland+Paris,+Coupvray&daddr=Le+Code+Bar,+3+Rue+des+Labours,+77700+Magny-le-Hongre&output=embed"
+  },
+  {
+    id: "lemenhir",
+    number: "04",
+    label: "Crêperie",
+    color: "bg-sky-300",
+    softColor: "bg-sky-100",
+    title: "Crêperie Le Menh’ir · Serris",
+    subtitle: "Galettes bretonas en Val d’Europe: opción familiar, francesa y manejable si se pide con cabeza.",
+    address: "3 Place Toscane, 77700 Serris",
+    distance: "50–60 min andando · 8–12 min coche",
+    price: "12–20€ si controlas bebida/postre",
+    whenShort: "Crêpe/galette",
+    taxi: "12–18€ aprox.; conviene combinar con Val d’Europe o Auchan.",
+    images: [
+      "https://images.openai.com/static-rsc-4/YAiojuq6sRr5PRKM1uJmCfqNZvWzViVouQAJeGF926gz_gk0f58qZNQ_b4l9uP7GAtG364dR_UN1D17sjmiEP6u1yTmtY4cSCMioM-fkBdoj6Uxoi8bEj3NrusHPWZ53STIAfv2HLJWTmS1Ql0hRE-4Q7CsCoISbp3Whzb9UKE_06y1OIvnGw6w9R_E6RraS?purpose=fullsize",
+      "https://images.openai.com/static-rsc-4/Pnz0MT16B_dwxokwHY_fVhWO5jnijVB614vK9J2T30jIsqqKShw3ln-jEQxftk0cmwyAMfdQz2H-qy4czupWx_m9JTNaLSissJ6S6WO1F84qEWlEt0IQMnUVsbkQsIgLudcsVsRYWHwtYuJGOCMX423PnkqKnXzHTrG_s8AKxzMhZ3p7CYnVGH5FjBDsFHlu?purpose=fullsize"
+    ],
+    insight1: "No es Brie local, pero sí es Francia cotidiana: galette de trigo sarraceno, crêpe dulce y ambiente de comida sencilla.",
+    insight2: "Funciona muy bien con niños porque el formato es familiar y fácil: queso, jamón, huevo, pollo, azúcar, chocolate.",
+    insight3: "Por qué importa: si queréis sentaros y que Alejandra coma sin drama, es más seguro que una carta francesa compleja.",
+    tip: "Pedir una galette simple. Si sumas bebida + crêpe + café, puede pasar de 20€.",
+    avoid: "Si estáis intentando gastar menos de 12€ por persona; ahí gana panadería/Auchan.",
+    pros: ["Familiar", "Francés", "Buen plan con niña", "Servicio continuo"],
+    cons: ["Puede subir con extras", "Zona más comercial", "No es hiperlocal Brie"],
+    decision: "Mejor opción sentada familiar en Val d’Europe si controlas el pedido.",
+    maps: "https://www.google.com/maps/search/?api=1&query=Cr%C3%AAperie+Le+Menhir+3+Place+Toscane+77700+Serris",
+    search: "https://www.google.com/search?q=Cr%C3%AAperie+Le+Menhir+Serris+menu+prix",
+    map: "https://www.google.com/maps?f=d&saddr=B%26B+HOTEL+près+de+Disneyland+Paris,+Coupvray&daddr=Crêperie+Le+Menhir,+3+Place+Toscane,+77700+Serris&output=embed"
+  },
+  {
+    id: "sidibousaid",
+    number: "05",
+    label: "Túnez local",
+    color: "bg-pink-300",
+    softColor: "bg-pink-100",
+    title: "Sidi Bou Said · Val d’Europe",
+    subtitle: "Cocina tunecina cerca de Val d’Europe: opción con más sabor y platos únicos por debajo o cerca de 20€.",
+    address: "Zona Val d’Europe / Chessy-Serris, buscar por nombre exacto en Maps",
+    distance: "50–60 min andando · 8–12 min coche",
+    price: "14–20€ si eliges plato único",
+    whenShort: "Sabor real",
+    taxi: "12–18€ aprox.; combinar con Val d’Europe.",
+    images: [
+      "https://images.openai.com/static-rsc-4/S-SrtJoVga49ATODnyf6hUKhsLoiprC_bsTAPVzv7xgp8N-EjHdIKk6OFBwMKoCR4XnU1BwK7go_wxPPov3gQy8RD4tczucP-VxyXWodTMcZ9qrCxpYCIo9zy59LI9q6Ousbih0UVddu8yy8NVmGEMGF0TcLiIfAs9nzCFp9uKgrgL9YLcxcCqcxCbLwuJqp?purpose=fullsize",
+      "https://images.openai.com/static-rsc-4/329KXdBbfs4Nd2NLStsMOJ0oqcuTaDdC4cN-FWvY504cpB3ukgaI8OYhLuj_jkb71tEZ4RUPVAk7j26rxNSFyocLeM5uMHaUoyeJ1bRsKZWE51DGzpa_JKblnlEkPReAZT15S7ZyuaqJCJm_ZKP7HZc1Edp-PZREseZq98QJ184BNNK_RQaghinQLJ9KVVi5?purpose=fullsize"
+    ],
+    insight1: "Esto no es 'tradicional Brie', pero sí es muy real del área metropolitana francesa: diversidad, comida de barrio y platos contundentes.",
+    insight2: "Algunos platos tipo couscous o pasta tunecina pueden caer dentro del rango si no añadís demasiadas entradas/bebidas.",
+    insight3: "Por qué importa: da experiencia local contemporánea, no postal turística.",
+    tip: "Elegir plato único. Revisar precios en carta antes de sentarse porque algunos couscous pasan de 20€.",
+    avoid: "Si queréis francés clásico o si todos están cansados y necesitáis algo ultra simple.",
+    pros: ["Más sabor", "Platos contundentes", "Experiencia local diversa", "Puede entrar en presupuesto"],
+    cons: ["No todo baja de 20€", "Dirección exacta a confirmar en Maps", "Puede ser más adulto"],
+    decision: "Buena opción si queréis comer diferente y no caer en cadenas.",
+    maps: "https://www.google.com/maps/search/?api=1&query=Sidi+Bou+Said+Val+d%27Europe",
+    search: "https://www.google.com/search?q=Sidi+Bou+Said+Val+d%27Europe+menu+prix",
+    map: "https://www.google.com/maps?f=d&saddr=B%26B+HOTEL+près+de+Disneyland+Paris,+Coupvray&daddr=Sidi+Bou+Said+Val+d%27Europe&output=embed"
+  },
+  {
+    id: "pret",
+    number: "06",
+    label: "Ligero rápido",
+    color: "bg-green-300",
+    softColor: "bg-green-100",
+    title: "Pret A Manger · La Vallée Village / Val d’Europe",
+    subtitle: "No es local francés profundo, pero sí muy práctico para comer ligero, rápido y bajo 15€.",
+    address: "La Vallée Village / Val d’Europe, 77700 Serris",
+    distance: "50–60 min andando · 8–12 min coche",
+    price: "7–15€",
+    whenShort: "Rápido",
+    taxi: "12–18€ aprox.; solo compensa si ya estáis en Val d’Europe.",
+    images: [
+      "https://images.openai.com/static-rsc-4/qj_O42pAz6dpkeDzK71uw0R6yARHTLhJwKWbCxQjQ5c3toOECVebUZnxp8xMuvyLswryNVUoiiBlYt2KkDHgZ3vXv5P3OldxPDkG7O3SU17ttCW6hX9peEyqKNkYhAnSfUEowKfq55Riytjd5Zff7DHG44CTfZbTkTwvAkXHnUsuFhwY6nQPjtzJ3_U5La-m?purpose=fullsize"
+    ],
+    insight1: "Pret no es 'descubrimiento local', pero resuelve muy bien una necesidad real: comer algo fresco sin sentarse largo ni gastar demasiado.",
+    insight2: "Sandwich, sopa, ensalada, café o algo dulce puede manteneros por debajo de 15€ si no os complicáis.",
+    insight3: "Por qué importa: a veces la mejor decisión no es la más auténtica, sino la que evita cansancio y gasto.",
+    tip: "Usarlo como comida ligera al pasar por La Vallée Village o Val d’Europe.",
+    avoid: "Si queréis experiencia local con alma; para eso mejor Le Code Bar o panadería.",
+    pros: ["Rápido", "Ligero", "Vegetarian friendly", "Buen precio"],
+    cons: ["Cadena", "Poca identidad local", "No merece taxi solo para esto"],
+    decision: "Solución práctica, no experiencia cultural.",
+    maps: "https://www.google.com/maps/search/?api=1&query=Pret+A+Manger+La+Vallée+Village+Serris",
+    search: "https://www.google.com/search?q=Pret+A+Manger+La+Vall%C3%A9e+Village+Serris",
+    map: "https://www.google.com/maps?f=d&saddr=B%26B+HOTEL+près+de+Disneyland+Paris,+Coupvray&daddr=Pret+A+Manger+La+Vallée+Village,+Serris&output=embed"
+  },
+  {
+    id: "bigfernand",
+    number: "07",
+    label: "Con cuidado",
+    color: "bg-red-300",
+    softColor: "bg-red-100",
+    title: "Big Fernand · Val d’Europe",
+    subtitle: "Burger francés de calidad; entra justo en 20€ si no te pasas. No es local-local, pero puede salvar una comida familiar.",
+    address: "14 Cours du Danube, 77700 Serris",
+    distance: "50–60 min andando · 8–12 min coche",
+    price: "17–21€",
+    whenShort: "Hamburguesa",
+    taxi: "12–18€ aprox.; solo si ya vais a Val d’Europe.",
+    images: [
+      "https://images.openai.com/static-rsc-4/bLhG0ArjvRLVDLt9_kF2ggK2JdNMXujO4E2JaQzOzJzKwpsHPSji125fRPOw7x9q9GrRxCEOOvWjmpft0LzeVX9jelawkYgSJU32xlKSacPKZCvbM9Hqs6YH0cmldDlUQMOfx_Ln4LxmVgVsgVaG9WiH6jqHY6HNjhN5NhQLyQ-nZSUek4CpCsYqob2XH54j?purpose=fullsize"
+    ],
+    insight1: "No es la experiencia local que buscamos como prioridad, pero sí puede ser una alternativa razonable si Alejandra quiere algo familiar y vosotros no queréis Disney food.",
+    insight2: "El problema es el ticket: hamburguesa + bebida + patatas puede acercarse o pasar de 20€.",
+    insight3: "Por qué importa: es una opción de emergencia controlada, no una recomendación principal.",
+    tip: "Pedir simple. Compartir patatas. No usarlo si el objetivo es máximo ahorro.",
+    avoid: "Si quieres menos de 15€ por persona: no es el sitio.",
+    pros: ["Seguro con niños", "Fácil", "Calidad decente", "Ubicación práctica"],
+    cons: ["Casi llega al límite", "Cadena", "Poco local"],
+    decision: "Plan B familiar, no plan local prioritario.",
+    maps: "https://www.google.com/maps/search/?api=1&query=Big+Fernand+Val+d%27Europe+14+Cours+du+Danube+77700+Serris",
+    search: "https://www.google.com/search?q=Big+Fernand+Val+d%27Europe+menu+prix",
+    map: "https://www.google.com/maps?f=d&saddr=B%26B+HOTEL+près+de+Disneyland+Paris,+Coupvray&daddr=Big+Fernand+Val+d%27Europe,+14+Cours+du+Danube,+77700+Serris&output=embed"
+  },
+  {
+    id: "riogrande",
+    number: "08",
+    label: "Dentro resort",
+    color: "bg-orange-300",
+    softColor: "bg-orange-100",
+    title: "Rio Grande Bar · Hotel Santa Fe",
+    subtitle: "No es local, pero puede ser un recurso cercano al resort con opciones tipo sandwich si no queréis moveros mucho.",
+    address: "Avenue Robert Schuman, 77700 Coupvray / Disney Hotel Santa Fe",
+    distance: "35–45 min andando · 6–9 min coche",
+    price: "15–21€",
+    whenShort: "Emergencia",
+    taxi: "8–14€ aprox. desde B&B HOTEL.",
+    images: [
+      "https://images.openai.com/static-rsc-4/8qoxXqz72slfGYov9DBeJmQZZ3nI0PaHJC9YG0ij9pskmSe81AEyyRySVdJTchvgCgdiQJZOBiZNWhgWnB2W6gjs3HzrCLS4IkRAg7xpQVZIdV6vm6caZwvJjSGT9yvL5L_OXqGPoREl4NHRSeyNLgZE-P9Nloy8SxOGSQmBcJMyL963qThYU4etqAK6vF40?purpose=fullsize"
+    ],
+    insight1: "Lo incluyo porque está cerca del ecosistema Disney y puede resolver, pero no porque sea local o especialmente recomendable.",
+    insight2: "Puede tener deals tipo sandwich + bebida + algo dulce, pero sigue siendo economía resort.",
+    insight3: "Por qué importa: es útil como plan de emergencia cuando moverse fuera ya no compensa.",
+    tip: "Usarlo solo si estáis cerca o agotados. No ir expresamente buscando experiencia local.",
+    avoid: "Si queréis comer bien de verdad o sentir Francia cotidiana.",
+    pros: ["Cerca del resort", "Puede resolver", "Fácil con niños"],
+    cons: ["No local", "Calidad/precio irregular", "Casi límite 20€"],
+    decision: "Recurso de emergencia, no recomendación principal.",
+    maps: "https://www.google.com/maps/search/?api=1&query=Rio+Grande+Bar+Disney+Hotel+Santa+Fe+Coupvray",
+    search: "https://www.google.com/search?q=Rio+Grande+Bar+Disney+Hotel+Santa+Fe+menu+prix",
+    map: "https://www.google.com/maps?f=d&saddr=B%26B+HOTEL+près+de+Disneyland+Paris,+Coupvray&daddr=Rio+Grande+Bar+Disney+Hotel+Santa+Fe+Coupvray&output=embed"
+  },
+  {
+    id: "latable-descartar",
+    number: "09",
+    label: "Descartar",
+    color: "bg-red-300",
+    softColor: "bg-red-100",
+    title: "La Table de Chessy",
+    subtitle: "Buen restaurante, pero no encaja con el filtro de esta guía: se va del objetivo de menos de 20€.",
+    address: "58 Rue Charles de Gaulle, 77700 Chessy aprox. · confirmar en Maps",
+    distance: "30–40 min andando · 5–9 min coche",
+    price: "24–46€+",
+    whenShort: "No ahora",
+    taxi: "8–14€ aprox., pero el problema es el ticket del restaurante.",
+    images: [
+      "https://images.openai.com/static-rsc-4/qSfKEiS4kP0tuR9PIVnbmr-X28Nr7HfrN_5Q0kJzXuADA8Moysb-K8mGyfj3xq-0ufwabaBlUSp9bYDIJMr85cQZhb1xMEW3TrMzHJzb-SLLsBupbXicH9Ygi8R3ZhhD547cCh1uTeh_m7ZLh800E0C0s8HDL_xlA6Fu4Npl03utNO5rP7i-S7ItlZp588Cn?purpose=fullsize"
+    ],
+    insight1: "Lo mantengo en la guía precisamente para evitar confusión: sí es interesante, pero no pertenece al plan de máximo 20€ por persona.",
+    insight2: "Puede valer como comida adulta especial, pero no como solución cotidiana del viaje Disney.",
+    insight3: "Por qué importa: una buena guía también dice dónde NO ir según el objetivo real.",
+    tip: "Solo considerarlo si decidís hacer una comida especial fuera del presupuesto.",
+    avoid: "Si el criterio sigue siendo máximo 20€/persona.",
+    pros: ["Más gastronómico", "Francés", "Cerca"],
+    cons: ["Fuera de presupuesto", "Menos flexible", "No ideal con cansancio"],
+    decision: "Descartado para esta guía económica, salvo capricho consciente.",
+    maps: "https://www.google.com/maps/search/?api=1&query=La+Table+de+Chessy",
+    search: "https://www.google.com/search?q=La+Table+de+Chessy+menu+prix",
+    map: "https://www.google.com/maps?f=d&saddr=B%26B+HOTEL+près+de+Disneyland+Paris,+Coupvray&daddr=La+Table+de+Chessy&output=embed"
+  },
+  {
+    id: "cocottes-descartar",
+    number: "10",
+    label: "Descartar",
+    color: "bg-red-300",
+    softColor: "bg-red-100",
+    title: "Les Cocottes d’Hélène",
+    subtitle: "Probablemente muy buena opción gastronómica en Coupvray, pero se sale claramente del presupuesto objetivo.",
+    address: "73 Rue de Lesches, 77700 Coupvray",
+    distance: "20–30 min andando · 4–7 min coche",
+    price: "22–49€+",
+    whenShort: "Capricho",
+    taxi: "8–12€ aprox., pero el menú ya rompe el filtro económico.",
+    images: [
+      "https://images.openai.com/static-rsc-4/qSfKEiS4kP0tuR9PIVnbmr-X28Nr7HfrN_5Q0kJzXuADA8Moysb-K8mGyfj3xq-0ufwabaBlUSp9bYDIJMr85cQZhb1xMEW3TrMzHJzb-SLLsBupbXicH9Ygi8R3ZhhD547cCh1uTeh_m7ZLh800E0C0s8HDL_xlA6Fu4Npl03utNO5rP7i-S7ItlZp588Cn?purpose=fullsize"
+    ],
+    insight1: "Es el ejemplo perfecto de sitio local que parece tentador, pero no sirve para el objetivo económico de esta guía.",
+    insight2: "Tiene menú infantil más razonable, pero para adultos se sale del rango.",
+    insight3: "Por qué importa: local no siempre significa barato. Aquí hay que separar experiencia gastronómica de comida diaria.",
+    tip: "Guardarlo solo como opción especial si queréis una cena adulta y aceptáis romper presupuesto.",
+    avoid: "Para comidas funcionales, días de parque o presupuesto ajustado.",
+    pros: ["Local de verdad", "Cerca", "Cocina cuidada"],
+    cons: ["Fuera de presupuesto", "No es casual", "No ideal para cansancio Disney"],
+    decision: "No recomendado para el objetivo ≤20€, aunque sea local.",
+    maps: "https://www.google.com/maps/search/?api=1&query=Les+Cocottes+d%27H%C3%A9l%C3%A8ne+73+Rue+de+Lesches+77700+Coupvray",
+    search: "https://www.google.com/search?q=Les+Cocottes+d%27H%C3%A9l%C3%A8ne+Coupvray+menu+prix",
+    map: "https://www.google.com/maps?f=d&saddr=B%26B+HOTEL+près+de+Disneyland+Paris,+Coupvray&daddr=Les+Cocottes+d%27Hélène,+73+Rue+de+Lesches,+77700+Coupvray&output=embed"
+  }
+];
+
+document.getElementById("places").innerHTML = places.map(place).join("");
+</script>
+
+<section class="px-4 md:px-6 pb-10">
+  <div class="card p-5 text-xs text-stone-600">
+    <p class="font-black uppercase tracking-widest mb-2">Nota práctica</p>
+    <p>
+      Los precios de taxi/Uber son rangos orientativos para decidir rápido. Antes de salir, confirma en la app de transporte y revisa horarios actuales de restaurantes, museo y supermercado. Las imágenes externas pueden depender de disponibilidad del servidor.
+    </p>
+  </div>
+</section>
+
+</body>
+</html>
